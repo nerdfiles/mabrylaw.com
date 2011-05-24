@@ -38,6 +38,24 @@
  * @since Twenty Ten 1.0
  */
 
+/* Load the core theme framework. */
+require_once( trailingslashit( TEMPLATEPATH ) . 'library/hybrid.php' );
+$theme = new Hybrid();
+
+/**
+ * Fictional function to register sidebars.
+ */
+function super_mario_register_sidebars() {
+    return false;
+}
+
+/**
+ * Fictional function to disable sidebars.
+ */
+function super_mario_disable_sidebars( $sidebars_widgets ) {
+    return $sidebars_widgets;
+}
+ 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -74,6 +92,35 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  */
 function twentyten_setup() {
 
+    /* Add theme support for core framework features. */
+    add_theme_support( 'hybrid-core-menus' );
+    add_theme_support( 'hybrid-core-sidebars' );
+    add_theme_support( 'hybrid-core-widgets' );
+    add_theme_support( 'hybrid-core-shortcodes' );
+    add_theme_support( 'hybrid-core-post-meta-box' );
+    add_theme_support( 'hybrid-core-drop-downs' );
+    add_theme_support( 'hybrid-core-seo' );
+    add_theme_support( 'hybrid-core-template-hierarchy' );
+
+    /* Add theme support for framework extensions. */
+    add_theme_support( 'post-layouts' );
+    add_theme_support( 'post-stylesheets' );
+    add_theme_support( 'loop-pagination' );
+    add_theme_support( 'get-the-image' );
+    add_theme_support( 'breadcrumb-trail' );
+    add_theme_support( 'entry-views' );
+    add_theme_support( 'custom-field-series' );
+
+    /* Add theme support for WordPress features. */
+    add_theme_support( 'automatic-feed-links' );
+    add_custom_background();
+
+    /* Register sidebars. */
+    add_action( 'widgets_init', 'super_mario_register_sidebars', 11 );
+
+    /* Filter the sidebar widgets. */
+    add_filter( 'sidebars_widgets', 'super_mario_disable_sidebars' );
+    
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
@@ -133,55 +180,23 @@ function twentyten_setup() {
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
+        'dummy' => array(
+            'url' => 'http://dummyimage.com/940x200/000/fff.png',
+            'thumbnail_url' => 'http://dummyimage.com/50x50/000/fff.png',
+            'description' => __( 'dummy', 'twentyten' )
+        ),
+      )
+    );
+    /*
+	register_default_headers( array(
 		'berries' => array(
 			'url' => '%s/images/headers/berries.jpg',
 			'thumbnail_url' => '%s/images/headers/berries-thumbnail.jpg',
-			/* translators: header image description */
 			'description' => __( 'Berries', 'twentyten' )
-		),
-		'cherryblossom' => array(
-			'url' => '%s/images/headers/cherryblossoms.jpg',
-			'thumbnail_url' => '%s/images/headers/cherryblossoms-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Cherry Blossoms', 'twentyten' )
-		),
-		'concave' => array(
-			'url' => '%s/images/headers/concave.jpg',
-			'thumbnail_url' => '%s/images/headers/concave-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Concave', 'twentyten' )
-		),
-		'fern' => array(
-			'url' => '%s/images/headers/fern.jpg',
-			'thumbnail_url' => '%s/images/headers/fern-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Fern', 'twentyten' )
-		),
-		'forestfloor' => array(
-			'url' => '%s/images/headers/forestfloor.jpg',
-			'thumbnail_url' => '%s/images/headers/forestfloor-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Forest Floor', 'twentyten' )
-		),
-		'inkwell' => array(
-			'url' => '%s/images/headers/inkwell.jpg',
-			'thumbnail_url' => '%s/images/headers/inkwell-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Inkwell', 'twentyten' )
-		),
-		'path' => array(
-			'url' => '%s/images/headers/path.jpg',
-			'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Path', 'twentyten' )
-		),
-		'sunset' => array(
-			'url' => '%s/images/headers/sunset.jpg',
-			'thumbnail_url' => '%s/images/headers/sunset-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Sunset', 'twentyten' )
 		)
-	) );
+	  )
+    );
+    */
 }
 endif;
 
