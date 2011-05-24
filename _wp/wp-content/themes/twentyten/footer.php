@@ -12,7 +12,7 @@
 ?>
 	</div><!-- #main -->
 
-	<div id="footer" role="contentinfo" class="columns-16">
+	<div id="footer" role="contentinfo" class="columns-16 clear-left">
 		<div id="colophon">
 
 <?php
@@ -23,9 +23,11 @@
 ?>
 
 			<div id="site-info">
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
+				<ul>
+				    <li><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+				    <li><a href="http://validator.w3.org/check?verbose=1&uri=<?php echo curPageURL(); ?>">html</a></li>
+				    <li><a href="http://jigsaw.w3.org/css-validator/validator?profile=css3&warning=2&uri=<?php echo curPageURL(); ?>">css</a></li>
+				</ul>
 			</div><!-- #site-info -->
 
 		</div><!-- #colophon -->
@@ -41,5 +43,6 @@
 
 	wp_footer();
 ?>
+
 </body>
 </html>

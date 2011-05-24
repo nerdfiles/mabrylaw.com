@@ -11,7 +11,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="utf-8" />
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -35,6 +35,7 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&_compress=false" />
+<link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" /> 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
@@ -54,7 +55,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed column-layout show-guide-16 clearfix">
+<div id="container" class="hfeed column-layout show-guide-16 clearfix">
+    
+    <div id="access" role="navigation" class="columns-16">
+        <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+        <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+    </div><!-- #access -->
+    
 	<div id="header" class="columns-16">
 		<div id="masthead">
 			<div id="branding" role="banner">
@@ -78,14 +85,12 @@
 						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
 					<?php endif; ?>
 			</div><!-- #branding -->
-
-			<div id="access" role="navigation">
-			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-			</div><!-- #access -->
 		</div><!-- #masthead -->
 	</div><!-- #header -->
+	
+	<div id="nav" class="columns-16">
+        <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+        <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+    </div>
 
 	<div id="main"  class="columns-16">

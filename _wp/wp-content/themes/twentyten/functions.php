@@ -200,6 +200,18 @@ function twentyten_setup() {
 }
 endif;
 
+function curPageURL() {
+ $pageURL = 'http';
+ if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+ $pageURL .= "://";
+ if ($_SERVER["SERVER_PORT"] != "80") {
+  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+ } else {
+  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $pageURL;
+}
+
 if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
@@ -521,3 +533,41 @@ function twentyten_posted_in() {
 	);
 }
 endif;
+
+
+function dereg_scripts() {
+    wp_deregister_script( 'jquery' );
+    wp_deregister_script('comment-reply');
+    wp_deregister_script('l10n');
+}    
+ 
+add_action('init', 'dereg_scripts');
+
+/* ======= In-house JS ======= */
+
+//add_action('hybrid_after_html', 'load_js', 11);
+add_action('wp_head', 'load_js', 11);
+
+function load_js() {
+?>
+
+    <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/script.js/dist/script.min.js"></script>
+    
+    <script type="text/javascript">
+    
+        $script('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery', function() {
+        
+            $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js', 'jqueryui');
+            $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js', 'jqueryuii18n');
+            
+            $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js/global.js', 'global');
+            $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 'waypoints');
+        
+        });
+        $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
+        $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
+
+    </script>
+    
+<?php
+}
