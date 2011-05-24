@@ -1,5 +1,110 @@
+# crazy shit
 AddHandler application/x-httpd-php5 .php
-Options +FollowSymLinks
+AddHandler application/x-httpd-php .css
+
+# protect the htaccess file
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+# disable the server signature
+ServerSignature Off
+
+# limit file uploads to 10mb
+LimitRequestBody 10240000
+
+# protect wpconfig.php
+<files _wp/wp-config.php>
+order allow,deny
+deny from all
+</files>
+
+#who has access who doesnt
+order allow,deny
+#deny from 000.000.000.000
+allow from all
+
+#custom error docs
+ErrorDocument 404 /notfound.php
+ErrorDocument 403 /forbidden.php
+ErrorDocument 500 /error.php
+
+# disable directory browsing
+Options All -Indexes
+
+#block referring domains
 RewriteEngine on
-RewriteBase /
+RewriteCond %{HTTP_REFERER} digg\.com [NC]
+RewriteRule .* – [F]
+
+#disable hotlinking of images with forbidden or custom image option
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?mabrylaw.com/.*$ [NC]
+#RewriteRule \.(gif|jpg)$ – [F]
+#RewriteRule \.(gif|jpg)$ http://www.mabrylaw.com/stealingisbad.gif [R,L]
+
+# php compression – use with caution
+<ifmodule mod_php4.c>
+php_value zlib.output_compression 16386
+</ifmodule>
+
+# set the canonical url
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^mabrylaw\.com$ [NC]
+RewriteRule ^(.*)$ http://www.mabrylaw.com/$1 [R=301,L]
+
+# protect from spam comments
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
+RewriteCond %{HTTP_REFERER} !.*yourdomain.com.* [OR]
+RewriteCond %{HTTP_USER_AGENT} ^$
+RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /dev/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /dev.php [L]
+</IfModule>
+
 RewriteRule dev(/.*)$ dev.php$1
+
+# BEGIN W3TC Browser Cache
+<IfModule mod_deflate.c>
+    <IfModule mod_setenvif.c>
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4\.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+        BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+    </IfModule>
+    <IfModule mod_headers.c>
+        Header append Vary User-Agent env=!dont-vary
+    </IfModule>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE text/css application/x-javascript text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon
+    </IfModule>
+</IfModule>
+<FilesMatch "\.(css|js|CSS|JS)$">
+    FileETag None
+    <IfModule mod_headers.c>
+         Header set X-Powered-By "W3 Total Cache/0.9.1.4b"
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(html|htm|rtf|rtx|svg|svgz|txt|xsd|xsl|xml|HTML|HTM|RTF|RTX|SVG|SVGZ|TXT|XSD|XSL|XML)$">
+    FileETag None
+    <IfModule mod_headers.c>
+         Header set X-Powered-By "W3 Total Cache/0.9.1.4b"
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|mpp|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|swf|tar|tif|tiff|wav|wma|wri|xla|xls|xlsx|xlt|xlw|zip|ASF|ASX|WAX|WMV|WMX|AVI|BMP|CLASS|DIVX|DOC|DOCX|EXE|GIF|GZ|GZIP|ICO|JPG|JPEG|JPE|MDB|MID|MIDI|MOV|QT|MP3|M4A|MP4|M4V|MPEG|MPG|MPE|MPP|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|PNG|POT|PPS|PPT|PPTX|RA|RAM|SWF|TAR|TIF|TIFF|WAV|WMA|WRI|XLA|XLS|XLSX|XLT|XLW|ZIP)$">
+    FileETag None
+    <IfModule mod_headers.c>
+         Header set X-Powered-By "W3 Total Cache/0.9.1.4b"
+    </IfModule>
+</FilesMatch>
+# END W3TC Browser Cache
