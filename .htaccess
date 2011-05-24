@@ -1,0 +1,5 @@
+AddHandler application/x-httpd-php5 .php
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteRule dev(/.*)$ dev.php$1
