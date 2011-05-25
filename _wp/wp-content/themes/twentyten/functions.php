@@ -98,7 +98,7 @@ function twentyten_setup() {
     add_theme_support( 'hybrid-core-widgets' );
     add_theme_support( 'hybrid-core-shortcodes' );
     add_theme_support( 'hybrid-core-post-meta-box' );
-    add_theme_support( 'hybrid-core-drop-downs' );
+    //add_theme_support( 'hybrid-core-drop-downs' );
     add_theme_support( 'hybrid-core-seo' );
     add_theme_support( 'hybrid-core-template-hierarchy' );
 
@@ -539,9 +539,10 @@ function dereg_scripts() {
     wp_deregister_script( 'jquery' );
     wp_deregister_script('comment-reply');
     wp_deregister_script('l10n');
+    
 }    
  
-add_action('init', 'dereg_scripts');
+add_action('wp_head', 'dereg_scripts');
 
 /* ======= In-house JS ======= */
 
@@ -565,7 +566,9 @@ function load_js() {
         
         });
         $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
+        <?php if ( is_singular() && get_option( 'thread_comments' ) ) : ?>
         $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
+        <?php endif; ?>
 
     </script>
     
