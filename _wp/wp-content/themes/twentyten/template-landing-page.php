@@ -16,7 +16,7 @@ get_header(); ?>
 
 <?php get_template_part( 'rail', 'left' ); ?>
         
-		<div id="container" class="columns-12 begin">
+		<div id="container" class="columns-9">
 			<div id="content" role="main">
 
 			<?php
@@ -29,6 +29,7 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
+		
+<?php get_template_part( 'rail', 'right' ); ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

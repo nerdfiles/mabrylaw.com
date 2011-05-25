@@ -1,5 +1,7 @@
 <?php
 /**
+ * Copy of template-blog-landing-page.php
+ * 
  * The main template file.
  *
  * This is the most generic template file in a WordPress theme
@@ -15,7 +17,7 @@
 
 get_header(); ?>
 
-		<div id="container" class="columns-12 begin">
+		<div id="container" class="columns-11 begin">
 			<div id="content" role="main">
 
 			<?php
