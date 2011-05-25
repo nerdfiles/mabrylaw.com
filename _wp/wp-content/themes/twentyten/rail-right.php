@@ -4,7 +4,8 @@
                 
                 <div id="right-rail" class="rail columns-3 end" role="complementary">
                     <div class="rail-inner">
-                        <p>I actually exist, both presentationally and in the source.</p>    
+                        <h2>Right Rail</h2>
+                        <p>I actually exist, both presentationally and in the Source.</p>    
                     </div>
                 </div>
                 
