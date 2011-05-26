@@ -1,0 +1,65 @@
+/**
+ * mabrylaw.com Master Stylesheet
+ * 
+ * @author          nerdfiles
+ * @date            05-25-2011 5:52p
+ * @version         0.0.1
+ * 
+ * @tested          
+ * @css-for         chrome,ff3,ff4,opera,ie7,ie8
+ *
+ * @project         mabrylaw.com
+ * 
+ * @package         mabrylaw.com
+ */
+
+
+/**
+ * Typesetting
+ */
+
+/** Headers Defaults */
+
+h1,h2,h3,h4,h5,h6 { margin: 0; }
+h1,h2,h3,h4 { 
+    font-size: 2em;
+    line-height: 1; 
+    font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+h1 { font-size: 3em; }
+h2 { font-size: 2.7em; font-family: 'Cardo', serif; }
+h3 { font-size: 2.4em; }
+h4 { font-size: 2.1em; }
+
+body.home { }
+body.home h1 { }
+body.home h2 { }
+body.home h3 { }
+body.home h4 { }
+
+body.page { }
+body.page h1 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+body.page h2 { }
+body.page h3 { font-family: 'Cardo', serif; }
+
+body.blog { }
+body.blog h1 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+body.blog h2 { }
+body.blog h3 { font-family: 'Cardo', serif; }
+
+/** Copy and Forms Defaults */
+    
+body,
+h5,h6,
+p,
+table,
+ul,ol,dl,
+input,textarea,select { 
+    font-size: 1em;
+    font-family: 'Cardo', serif; 
+    line-height: 1.5; }
+
+/**
+ * General
+ */
+
+body { }

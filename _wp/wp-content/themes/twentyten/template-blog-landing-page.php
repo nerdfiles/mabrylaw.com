@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: CSM: Blog Landing Page
+ * Template Name: CSM - Blog Landing Page
  *
  * A custom page template without sidebar.
  *
@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-
+        
 		<div id="container" class="columns-11 begin">
 			<div id="content" role="main">
 
@@ -22,7 +22,7 @@ get_header(); ?>
 			 * If you want to overload this in a child theme then include a file
 			 * called loop-page.php and that will be used instead.
 			 */
-			 get_template_part( 'loop', 'page' );
+			 get_template_part( 'loop', 'index' );
 			?>
 
 			</div><!-- #content -->
