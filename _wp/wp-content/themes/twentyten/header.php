@@ -36,7 +36,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&_compress=false" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&amp;_compress=false" />
 <link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" /> 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -51,20 +51,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="container" class="hfeed column-layout show-guide-16 clearfix">
-    
-    <div id="access" role="navigation">
-        <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-        <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-    </div><!-- #access -->
+<div id="site-container" class="hfeed column-layout show-guide-16 clearfix">
     
 	<div id="global-header" class="columns-16">
 	    
+	    <div id="access" role="navigation">
+            <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+            <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+        </div><!-- #access -->
+	    
 	    <div id="language-switcher">
             <ul>
-                <li>English</li>
-                <li>Chuyen</li>
-                <li>Spanish</li>
+                <li><a href=".?lang=en">English</a></li>
+                <li><a href=".?lang=ch">Chuy&eacute;n</a></li>
+                <li><a href=".?lang=es">Spanish</a></li>
             </ul>
         </div><!-- #language-switcher -->
 		
@@ -86,8 +86,8 @@
     </div>
     
     <?php if (is_front_page()) : ?>
-        
-    <div id="masthead">
+    
+    <div id="masthead" class="columns-16">
         <div id="branding" role="banner">
             <?php
                 // Check if this is a post or page, if it has a thumbnail, and if it's a big one

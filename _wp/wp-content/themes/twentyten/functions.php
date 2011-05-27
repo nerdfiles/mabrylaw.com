@@ -542,7 +542,7 @@ function dereg_scripts() {
     
 }    
  
-add_action('wp_head', 'dereg_scripts');
+add_action('wp', 'dereg_scripts');
 
 /* ======= In-house JS ======= */
 

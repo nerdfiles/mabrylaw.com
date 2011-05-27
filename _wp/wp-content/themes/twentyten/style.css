@@ -69,3 +69,5 @@ input,textarea,select {
  */
 
 body { }
+
+#masthead { clear: left; }
