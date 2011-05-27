@@ -23,7 +23,8 @@
 				</div><!-- #nav-above -->
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+					<!-- loop-single.php > do_action('custom_entry_title'); -->
+                    <?php do_action('custom_entry_title'); ?>
 
 					<div class="entry-meta">
 						<?php twentyten_posted_on(); ?>

@@ -16,8 +16,6 @@
 
 get_header(); ?>
 
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-
         <div id="container" class="columns-11 begin">
             <div id="content" role="main">
 

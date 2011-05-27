@@ -100,3 +100,5 @@
     </div>
 
 	<div id="main"  class="columns-16">
+	    
+	    <?php do_action('custom_page_header'); ?>

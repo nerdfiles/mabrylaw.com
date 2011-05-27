@@ -25,7 +25,8 @@
 				<?php endif; ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2 class="entry-title"><?php the_title(); ?></h2>
+					<!-- loop-attachment.php > do_action('custom_entry_title'); -->
+                    <?php do_action('custom_entry_title'); ?>
 
 					<div class="entry-meta">
 						<?php
