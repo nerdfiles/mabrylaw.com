@@ -53,12 +53,21 @@
 <body <?php body_class(); ?>>
 <div id="container" class="hfeed column-layout show-guide-16 clearfix">
     
-    <div id="access" role="navigation" class="columns-16">
+    <div id="access" role="navigation">
         <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
         <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
     </div><!-- #access -->
     
 	<div id="header" class="columns-16">
+	    
+	    <div id="language-switcher">
+            <ul>
+                <li>English</li>
+                <li>Chuyen</li>
+                <li>Spanish</li>
+            </ul>
+        </div><!-- #language-switcher -->
+        
 		<div id="masthead">
 			<div id="branding" role="banner">
 				<?php $heading_tag = ( is_front_page() ) ? 'h1' : 'div'; ?>
@@ -82,6 +91,7 @@
 					<?php endif; ?>
 			</div><!-- #branding -->
 		</div><!-- #masthead -->
+		
 	</div><!-- #header -->
 	
 	<div id="nav" class="columns-16">
