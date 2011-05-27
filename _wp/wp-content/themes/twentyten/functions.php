@@ -591,6 +591,7 @@ add_action('custom_page_header', 'custom_page_header');
 function custom_page_header() { 
     $linkOut = (!is_404());
     $current_category = get_the_category();
+    $catName = $current_category[0]->cat_name;
     $cat = $current_category[0]->category_nicename;
     $category_id = get_cat_ID( $cat );
     $category_link = get_category_link( $category_id );
@@ -621,7 +622,7 @@ function custom_page_header() {
             <?php elseif( is_page() ) : ?>
                     <?php the_title(); ?>
             <?php elseif( is_single() ) : ?>
-                    <?php the_title(); ?>
+                    <?php echo $catName; ?>
             <?php else : ?>
                     <?php the_title(); ?>
             <?php endif;

@@ -58,7 +58,7 @@
         <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
     </div><!-- #access -->
     
-	<div id="header" class="columns-16">
+	<div id="global-header" class="columns-16">
 	    
 	    <div id="language-switcher">
             <ul>
@@ -67,37 +67,43 @@
                 <li>Spanish</li>
             </ul>
         </div><!-- #language-switcher -->
-        
-		<div id="masthead">
-			<div id="branding" role="banner">
-				<?php $heading_tag = ( is_front_page() ) ? 'h1' : 'div'; ?>
-				<<?php echo $heading_tag; ?> id="site-title">
-					<span>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</span>
-				</<?php echo $heading_tag; ?>>
-				<!--div id="site-description"><?php bloginfo( 'description' ); ?></div-->
-
-				<?php
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-					if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-							has_post_thumbnail( $post->ID ) &&
-							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID );
-					elseif ( get_header_image() ) : ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-					<?php endif; ?>
-			</div><!-- #branding -->
-		</div><!-- #masthead -->
 		
 	</div><!-- #header -->
 	
-	<div id="nav" class="columns-16">
+	<div id="logo" class="columns-6">
+        <?php $heading_tag = ( is_front_page() ) ? 'h1' : 'div'; ?>
+        <<?php echo $heading_tag; ?> id="site-title">
+            <span>
+                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+            </span>
+        </<?php echo $heading_tag; ?>>
+        <!--div id="site-description"><?php bloginfo( 'description' ); ?></div-->
+	</div>
+	
+	<div id="nav" class="columns-10">
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
         <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
     </div>
+    
+    <?php if (is_front_page()) : ?>
+        
+    <div id="masthead">
+        <div id="branding" role="banner">
+            <?php
+                // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+                if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
+                        has_post_thumbnail( $post->ID ) &&
+                        ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+                        $image[1] >= HEADER_IMAGE_WIDTH ) :
+                    // Houston, we have a new header image!
+                    echo get_the_post_thumbnail( $post->ID );
+                elseif ( get_header_image() ) : ?>
+                    <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+                <?php endif; ?>
+        </div><!-- #branding -->
+    </div><!-- #masthead -->
+    
+    <?php endif; ?>
 
 	<div id="main"  class="columns-16">
 	    
