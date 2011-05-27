@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-		<div id="container" class="columns-12 begin" class="one-column">
+		<div id="container" class="columns-11 begin" class="one-column">
 			<div id="content" role="main">
 
 			<?php

@@ -579,7 +579,7 @@ add_action('custom_entry_title', 'custom_entry_title');
 
 function custom_entry_title() {
     
-    if (!is_page()):
+    if (!is_page() || is_front_page() || is_home()):
     ?>
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 <?php
@@ -590,40 +590,49 @@ add_action('custom_page_header', 'custom_page_header');
 
 function custom_page_header() { 
     $linkOut = (!is_404());
+    $current_category = get_the_category();
+    $cat = $current_category[0]->category_nicename;
+    $category_id = get_cat_ID( $cat );
+    $category_link = get_category_link( $category_id );
+    $linkOutUrl = (is_single() || in_category($cat)) ? $category_link : get_permalink();
+    
+    if ( !(is_front_page()) ) :
 ?>
-    
-    <!--
-    <h1 class="page-title"><?php
-        printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-    ?></h1>
-    
-    <h1 class="page-title"><?php
-        printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-    ?></h1>
-                
-    <h1 class="page-title author"><?php printf( __( 'Author Archives: %s', 'twentyten' ), "<span class='vcard'><a class='url fn n' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a></span>" ); ?></h1>
-    -->
-    
     <h1 class="page-title">
+        
         <?php if ($linkOut) : ?>
-        <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+            <a href="<?php echo $linkOutUrl; ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
         <?php endif; ?>
-            
-<?php if ( is_day() ) : ?>
-    <?php printf( __( 'Daily Archives: <span>%s</span>', 'twentyten' ), get_the_date() ); ?>
-<?php elseif ( is_month() ) : ?>
-    <?php printf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'F Y' ) ); ?>
-<?php elseif ( is_year() ) : ?>
-    <?php printf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'Y' ) ); ?>
-<?php elseif ( is_404() ) : ?>
-        <?php _e( 'Not Found', 'twentyten' ); ?>
-<?php else : ?>
-    <?php _e( 'News', 'twentyten' ); ?>
-<?php endif; ?>
-        <?php if ($linkOut) : ?>
+        
+            <?php if ( is_day() ) : ?>
+                <?php printf( __( 'Daily Archives: <span>%s</span>', 'twentyten' ), get_the_date() ); ?>
+            <?php elseif ( is_category() ) : ?>
+                <?php printf( __( '%s', 'twentyten' ), single_cat_title( '', false ) ); ?>
+            <?php elseif ( is_tag() ) : ?>
+                <?php printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+            <?php elseif (is_author() ) : ?>
+                <?php printf( __( 'Author Archives: %s', 'twentyten' ), "<span class='vcard'><a class='url fn n' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a></span>" ); ?>
+            <?php elseif ( is_month() ) : ?>
+                <?php printf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'F Y' ) ); ?>
+            <?php elseif ( is_year() ) : ?>
+                <?php printf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'Y' ) ); ?>
+            <?php elseif ( is_404() ) : ?>
+                    <?php _e( 'Not Found', 'twentyten' ); ?>
+            <?php elseif( is_page() ) : ?>
+                    <?php the_title(); ?>
+            <?php elseif( is_single() ) : ?>
+                    <?php the_title(); ?>
+            <?php else : ?>
+                    <?php the_title(); ?>
+            <?php endif;
+        
+        if ($linkOut) : ?>
         </a>
         <?php endif; ?>
+        
     </h1>
     
     <?php
+    
+    endif;
 }

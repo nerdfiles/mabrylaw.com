@@ -23,12 +23,16 @@
 h1,h2,h3,h4,h5,h6 { 
     margin: 0; 
     line-height: 1.3; }
-h1,h2,h3,h4 { 
-    font-size: 2em;
+    
+h1 { 
     line-height: 1.3; 
     font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+h2,h3,h4 { 
+    line-height: 1.3; 
+    font-family: 'Cardo', serif; }
+    
 h1 { font-size: 3em; }
-h2 { font-size: 2.7em; font-family: 'Cardo', serif; }
+h2 { font-size: 2.7em; }
 h3 { font-size: 2.4em; }
 h4 { font-size: 2.1em; }
 
@@ -39,14 +43,14 @@ body.home h3 { }
 body.home h4 { }
 
 body.page { }
-body.page h1 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+body.page h1 { }
 body.page h2 { }
-body.page h3 { font-family: 'Cardo', serif; }
+body.page h3 { }
 
 body.blog { }
-body.blog h1 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; }
+body.blog h1 { }
 body.blog h2 { }
-body.blog h3 { font-family: 'Cardo', serif; }
+body.blog h3 { }
 
 /** Copy and Forms Defaults */
     
