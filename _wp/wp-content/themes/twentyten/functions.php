@@ -363,7 +363,6 @@ function twentyten_comment( $comment, $args, $depth ) {
 		</div><!-- .comment-author .vcard -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
 			<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
-			<br />
 		<?php endif; ?>
 
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
@@ -410,8 +409,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The primary widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
@@ -421,8 +420,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The secondary widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Area 3, located in the footer. Empty by default.
@@ -432,8 +431,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The first footer widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Area 4, located in the footer. Empty by default.
@@ -443,8 +442,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The second footer widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Area 5, located in the footer. Empty by default.
@@ -454,8 +453,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The third footer widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 
 	// Area 6, located in the footer. Empty by default.
@@ -465,8 +464,8 @@ function twentyten_widgets_init() {
 		'description' => __( 'The fourth footer widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
 	) );
 }
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */

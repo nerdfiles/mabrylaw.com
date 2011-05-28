@@ -63,6 +63,6 @@
 					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '</span>' ); ?></div>
 				</div><!-- #nav-below -->
 
-				<?php comments_template( '', true ); ?>
+				<?php //comments_template( '', true ); ?>
 
 <?php endwhile; // end of the loop. ?>

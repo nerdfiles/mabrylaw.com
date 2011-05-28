@@ -59,7 +59,9 @@
 
 	<?php if ( ( function_exists( 'get_post_format' ) && 'gallery' == get_post_format( $post->ID ) ) || in_category( _x( 'gallery', 'gallery category slug', 'twentyten' ) ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+		    
+		    <!-- loop.php > do_action('custom_entry_title'); -->
+            <?php do_action('custom_entry_title'); ?>
 
 			<div class="entry-meta">
 				<?php twentyten_posted_on(); ?>
@@ -94,9 +96,8 @@
 				<span class="meta-sep">|</span>
 			<?php elseif ( in_category( _x( 'gallery', 'gallery category slug', 'twentyten' ) ) ) : ?>
 				<a href="<?php echo get_term_link( _x( 'gallery', 'gallery category slug', 'twentyten' ), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'twentyten' ); ?>"><?php _e( 'More Galleries', 'twentyten' ); ?></a>
-				<span class="meta-sep">|</span>
 			<?php endif; ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+				<!--span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span-->
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
@@ -118,8 +119,7 @@
 
 			<div class="entry-utility">
 				<?php twentyten_posted_on(); ?>
-				<span class="meta-sep">|</span>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+				<!--span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span-->
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
@@ -161,14 +161,13 @@
 					<span class="tag-links">
 						<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 					</span>
-					<span class="meta-sep">|</span>
 				<?php endif; ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+				<!--span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span-->
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
-		<?php comments_template( '', true ); ?>
+		<?php //comments_template( '', true ); ?>
 
 	<?php endif; // This was the if statement that broke the loop into three parts based on categories. ?>
 
