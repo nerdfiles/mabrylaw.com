@@ -62,9 +62,9 @@
 	    
 	    <div id="language-switcher">
             <ul>
-                <li><a href=".?lang=en">English</a></li>
-                <li><a href=".?lang=ch">Chuy&eacute;n</a></li>
-                <li><a href=".?lang=es">Spanish</a></li>
+                <li><a href="?lang=en">English</a></li>
+                <li><a href="?lang=ch">Chuy&eacute;n</a></li>
+                <li><a href="?lang=es">Spanish</a></li>
             </ul>
         </div><!-- #language-switcher -->
 		

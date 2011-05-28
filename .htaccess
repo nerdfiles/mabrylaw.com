@@ -59,7 +59,7 @@ RewriteRule ^(.*)$ http://www.mabrylaw.com/$1 [R=301,L]
 RewriteEngine On
 RewriteCond %{REQUEST_METHOD} POST
 RewriteCond %{REQUEST_URI} .wp-comments-post\.php*
-RewriteCond %{HTTP_REFERER} !.*yourdomain.com.* [OR]
+RewriteCond %{HTTP_REFERER} !.*mabrylaw.com.* [OR]
 RewriteCond %{HTTP_USER_AGENT} ^$
 RewriteRule (.*) ^http://%{REMOTE_ADDR}/$ [R=301,L]
 
@@ -70,9 +70,11 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /dev.php [L]
+#RewriteRule ^(.*)/language$ /dev.php$1 [L]
 </IfModule>
 
-RewriteRule dev(/.*)$ dev.php$1
+#RewriteRule dev(/.*)$ dev.php$1
+
 
 # BEGIN W3TC Browser Cache
 <IfModule mod_deflate.c>

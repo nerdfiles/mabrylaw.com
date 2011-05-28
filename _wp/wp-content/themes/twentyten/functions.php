@@ -535,6 +535,27 @@ function twentyten_posted_in() {
 endif;
 
 
+add_filter('rewrite_rules_array', 'customRewriteRules');
+add_filter('query_vars','customQueryVars');
+add_filter('init','flushRules');
+
+function flushRules() {
+   global $wp_rewrite;
+    $wp_rewrite->flush_rules();
+}
+
+function customRewriteRules($rules) {
+    $aNewRules = array(); //(.+?)(/[0-9]+)?/?$
+    //$aNewRules['./language/en'] = '?pagenamelang=en';
+    return $aNewRules + $rules;
+}
+
+function customQueryVars($vars) {
+    array_push($vars, 'lang');
+    return $vars;
+}
+
+
 function dereg_scripts() {
     wp_deregister_script( 'jquery' );
     wp_deregister_script('comment-reply');
