@@ -9,6 +9,21 @@
  * @since Twenty Ten 1.0
  */
 ?><!DOCTYPE html>
+<!--
+   
+/**
+ * mabrylaw.com
+ *
+ * A Web project by designthus.
+ * 
+ * @developer       nerdfiles
+ * @designer        mdulin
+ * @version         0.0.1
+ * @date            2011-05-23
+ * @include         header.php
+ */
+    
+-->
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
 <meta charset="utf-8" />
@@ -55,18 +70,60 @@
     
 	<div id="global-header" class="columns-16">
 	    
-	    <div id="access" role="navigation">
+	    <div id="access" role="navigation" class="accessibly-hide">
             <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-            <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
+            <p><small><em>Note:</em> 4 skip links below</small></p>
+            <ul>
+                <li>
+                    <a 
+                        href="#language-switcher" 
+                        rel="internal"
+                        id="skip-language-switcher"
+                        title="<?php esc_attr_e( 'Change language', 'twentyten' ); ?>">
+                        <?php _e( 'Change language', 'twentyten' ); ?>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href="#main" 
+                        rel="internal"
+                        id="skip-main"
+                        title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>">
+                        <?php _e( 'Skip to content', 'twentyten' ); ?>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href="#search"
+                        rel="internal"
+                        id="skip-search" 
+                        title="<?php esc_attr_e( 'Skip to search', 'twentyten' ); ?>">
+                        <?php _e( 'Skip to search', 'twentyten' ); ?>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href="#primary" 
+                        rel="internal"
+                        id="skip-primary"
+                        title="<?php esc_attr_e( 'Skip to primary sidebar', 'twentyten' ); ?>">
+                        <?php _e( 'Skip to primary sidebar', 'twentyten' ); ?>
+                    </a>
+                </li>
+            </ul>
         </div><!-- #access -->
 	    
 	    <div id="language-switcher">
             <ul>
-                <li><a href="?lang=en">English</a></li>
-                <li><a href="?lang=ch">Chuy&eacute;n</a></li>
-                <li><a href="?lang=es">Spanish</a></li>
+                <li><a href="?lang=en" title="English" rel="internal" id="lang-eng">English</a></li>
+                <li><a href="?lang=ch" title="Chuy&eacute;n" rel="internal" id="lang-chu">Chuy&eacute;n</a></li>
+                <li><a href="?lang=es" title="Spanish" rel="internal" id="lang-esp">Spanish</a></li>
             </ul>
         </div><!-- #language-switcher -->
+        
+        <div id="search">
+        <?php get_search_form(); ?>
+        </div><!-- #search -->
 		
 	</div><!-- #header -->
 	

@@ -573,29 +573,44 @@ add_action('wp', 'dereg_scripts');
 /* ======= In-house JS ======= */
 
 //add_action('hybrid_after_html', 'load_js', 11);
-add_action('wp_head', 'load_js', 11);
+add_action('wp_footer', 'load_js', 11);
 
 function load_js() {
 ?>
 
-    <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/script.js/dist/script.min.js"></script>
+<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/script.js/dist/script.min.js"></script>
+
+<script type="text/javascript">
+
+    // jquery
+    //$script('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery');
+    $script([
+        'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 
+        '<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js' 
+        //'http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js'
+        ], 
+    'jquery');
     
-    <script type="text/javascript">
-    
-        $script('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery', function() {
-            
-            $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js/global.js', 'global');
-            $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 'waypoints');
-        
-        });
+    // jquery plugins - ready from the outside
+    /*
+    $script.ready('jquery', function() { 
+        $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 'waypoints');
         $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js', 'jqueryui');
         $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js', 'jqueryuii18n');
-        $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
-        <?php if ( is_singular() && get_option( 'thread_comments' ) ) : ?>
-        $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
-        <?php endif; ?>
+    });
+    */
+    
+    // custom - ready from the inside
+    $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js/global.js', 'global');
+    
+    // WP stuff
+    $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
+    <?php if ( is_singular() && get_option( 'thread_comments' ) ) : ?>
+    $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
+    <?php endif; ?>
 
-    </script>
+</script>
     
 <?php
 }
@@ -710,3 +725,78 @@ function fancy_excerpt($length, $ellipsis, $words, $return, $class) {
     endif;
 
 }
+
+function childtheme_mce_btns2($orig) {
+return array('formatselect', 'styleselect', '|', 'pastetext', 'pasteword', 'removeformat', '|', 'outdent', 'indent', '|', 'undo', 'redo', 'wp_help', 'mymenubutton' );
+}
+//add_filter( 'mce_buttons_2', 'childtheme_mce_btns2', 999 );
+
+function custom_options( $opt ) {
+    //format drop down list
+    //$opt['theme'] = 'advanced';
+    $opt['theme_advanced_blockformats'] = 'p,div,h2,h3,h4,h5,h6,blockquote,dt,dd,code,samp';
+    $opt['theme_advanced_styles'] = "Big Call Out=big-call-out;Schmancy Blockquote=schmancy-blockquote;Markup Address=address";
+    //$opt['theme_advanced_buttons1'] = 'bold,italic,strikethrough,insertdate';
+    //$opt['theme_advanced_buttons2'] = "insertlayer,styleprops,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,formatselect,underline,justifyfull,forecolor,|,pastetext,pasteword,removeformat,|,charmap,|,outdent,indent,|,undo,redo,wp_help";
+    //$opt['theme_advanced_buttons1'] = 'bold,italic,strikethrough,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,|,link,unlink,wp_more,|,spellchecker,fullscreen,wp_adv';
+    //$opt['theme_advanced_buttons2'] = 'preview,zoom,formatselect,underline,justifyfull,forecolor,|,pastetext,pasteword,removeformat,|,media,charmap,|,outdent,indent,|,undo,redo,wp_help,|,acronym';
+    //$opt['theme_advanced_buttons3'] = "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen";
+    //$opt['theme_advanced_buttons4'] = "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage";
+    //$opt['extended_valid_elements'] = "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]";
+    //font list
+    $opt['theme_advanced_fonts'] = 'Helvetica=helvetica,sans-serif,arial;Courier New=courier new,courier,monospace';
+    //font size
+    $opt['theme_advanced_font_sizes'] = '10px,12px,14px,16px,24px';
+    $opt['mode']="specific_textareas";
+    $opt['editor_selector']="theEditor";
+    $opt['width']="100%";
+    $opt['theme'] = "advanced";
+    $opt['skin'] = "wp_theme";
+    $opt['theme_advanced_buttons1'] = "cut,copy,paste,replace,bold,italic,strikethrough,underline,separator,bullist,numlist,outdent,indent,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,link,unlink,separator,image,styleprops,inserttime,insertdate,separator,wp_more,wp_page,separator,spellchecker,search,separator,fullscreen,wp_adv,code";
+    $opt['theme_advanced_buttons2'] = "fontselect,fontsizeselect,formatselect,styleselect,pastetext,pasteword,removeformat,separator,charmap,print,separator,forecolor,backcolor,emotions,separator,sup,sub,media,separator,undo,redo,attribs,wp_help,visualaid";
+    $opt['theme_advanced_buttons3'] = "insertlayer,moveforward,movebackward,absolute,advhr,acronym,delete_table,,ins,cite,tablecontrols,iespell,visualchars"; 
+    $opt['theme_advanced_buttons4'] = "";
+    $opt['language'] = "en";
+    $opt['spellchecker_languages']="+English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Polish=pl,Portuguese=pt,Spanish=es,Swedish=sv";
+    $opt['theme_advanced_toolbar_location'] = "top";
+    $opt['theme_advanced_toolbar_align'] = "left"; 
+    $opt['theme_advanced_statusbar_location'] = "bottom";
+    $opt['theme_advanced_resizing']=true;
+    $opt['theme_advanced_resize_horizontal']=false;
+    $opt['dialog_type']="modal";
+    $opt['relative_urls']=false;
+    $opt['remove_script_host']=false;
+    $opt['convert_urls']=false;
+    $opt['apply_source_formatting']=false;
+    $opt['remove_linebreaks']=true;
+    $opt['gecko_spellcheck']=true;
+    $opt['entities']="38,amp,60,lt,62,gt";
+    $opt['accessibility_focus']=true; 
+    $opt['tabfocus_elements']="major-publishing-actions"; 
+    $opt['media_strict']=false;
+    $opt['paste_remove_styles']=true;
+    $opt['paste_remove_spans']=true;
+    $opt['paste_strip_class_attributes']="all";
+    $opt['paste_text_use_dialog']=true;
+    $opt['wpeditimage_disable_captions']=false; 
+    $opt['plugins'] = "inlinepopups,spellchecker,paste,wordpress,fullscreen,wpeditimage,wpgallery,tabfocus,wplink,wpdialogs,-media,-advhr,-layer,-visualchars,-style,-emotions,-insertdatetime,-table,-print,-iespell,-searchreplace,-xhtmlxtras,-advlist,-advimage,-contextmenu";
+    $opt['content_css']="http://mabrylaw.com/_wp/wp-content/themes/twentyten/editor-style.css";
+    $opt['wordpress_adv_toolbar'] = "toolbar2";
+    //$opt['theme_advanced_containers'] = "mycontainer1,mycontainer2";
+    //$opt['theme_advanced_buttons3'] = "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor";
+    
+    //$opt['theme_advanced_layout_manager'] = "RowLayout";
+    //default foreground color
+    //$opt['theme_advanced_default_foreground_color'] = '#000000';
+    //default background color
+    //$opt['theme_advanced_default_background_color'] = '#FFFFFF';
+
+    return $opt;
+}
+//add_filter('tiny_mce_before_init', 'custom_options);
+
+function i_want_no_generators()
+{
+return '';
+}
+//add_filter('the_generator','i_want_no_generators');

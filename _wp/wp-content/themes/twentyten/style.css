@@ -66,6 +66,14 @@ input,textarea,select {
     font-size: 1em;
     font-family: 'Cardo', serif; 
     line-height: 1.5; }
+    
+/**
+ * Utils
+ */
+
+.hide { display: none; }
+.accessibly-hide { position: absolute; left: -9999px; }
+.text-hide { text-indent: -9999px; text-align: left; }
 
 /**
  * General

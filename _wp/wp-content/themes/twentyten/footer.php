@@ -25,6 +25,7 @@
 			<div id="site-info">
 				<ul>
 				    <li><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+				    <li><a href="/_wp/wp-admin/">dashboard</a></li>
 				    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>
 				    <li><a href="http://jigsaw.w3.org/css-validator/validator?profile=css3&amp;warning=2&amp;uri=<?php echo curPageURL(); ?>">css</a></li>
 				</ul>
