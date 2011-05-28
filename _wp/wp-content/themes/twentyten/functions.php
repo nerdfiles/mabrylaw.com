@@ -539,7 +539,7 @@ function twentyten_posted_in() {
 }
 endif;
 
-
+/*
 add_filter('rewrite_rules_array', 'customRewriteRules');
 add_filter('query_vars','customQueryVars');
 add_filter('init','flushRules');
@@ -559,6 +559,7 @@ function customQueryVars($vars) {
     array_push($vars, 'lang');
     return $vars;
 }
+*/
 
 
 function dereg_scripts() {

@@ -73,7 +73,7 @@ RewriteRule . /dev.php [L]
 #RewriteRule ^(.*)/language$ /dev.php$1 [L]
 </IfModule>
 
-#RewriteRule dev(/.*)$ dev.php$1
+RewriteRule dev(/.*)$ dev.php$1
 
 
 # BEGIN W3TC Browser Cache
