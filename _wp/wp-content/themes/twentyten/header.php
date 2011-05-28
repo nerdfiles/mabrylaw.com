@@ -9,7 +9,7 @@
  * @since Twenty Ten 1.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
 <meta charset="utf-8" />
 <title><?php
@@ -88,19 +88,38 @@
     <?php if (is_front_page()) : ?>
     
     <div id="masthead" class="columns-16">
-        <div id="branding" role="banner">
-            <?php
-                // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-                if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-                        has_post_thumbnail( $post->ID ) &&
-                        ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-                        $image[1] >= HEADER_IMAGE_WIDTH ) :
-                    // Houston, we have a new header image!
-                    echo get_the_post_thumbnail( $post->ID );
-                elseif ( get_header_image() ) : ?>
-                    <img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-                <?php endif; ?>
-        </div><!-- #branding -->
+        <div id="carousel">
+            <ul>
+                <?php 
+                    $carousel_counter = 0;
+                    $carousel_total = 2;
+                    //$my_query = new WP_Query('posts_per_page=3&meta_key=Top Story&meta_value=yes');
+                    $my_query = new WP_Query('posts_per_page=3');
+                
+                while ($my_query->have_posts()) : $my_query->the_post();
+                    $carousel_counter++; 
+                    $cat = get_the_category();
+    
+                    if ( get_header_image() ) : ?>
+                    
+                        <li class="carousel-item carousel-item-<?php echo $carousel_counter; ?> <?php if ($carousel_counter == $carousel_total) { echo "carousel-item-last"; } ?> clearfix">
+                            <div class="carousel-item-container" style="background: url('<?php header_image(); ?>') 100% 50% no-repeat; ">
+                                <div class="carousel-item-content">
+                                    <div class="carousel-item-category-container"><a class="carousel-item-category-link" href="<?php echo $cat[0]->slug; ?>/" title="View articles listed under <?php echo $cat[0]->cat_name; ?>"><?php echo strtolower($cat[0]->cat_name); ?></a></div>
+                                    <h2><?php the_title(); ?></h2>
+                                    <div class="">
+                                        <?php fancy_excerpt(12, null, null, null, 'teaser-excerpt') ?>
+                                    </div>
+                                    <div class="more">More</div>
+                                </div>
+                            </div>
+                       </li>
+                       
+                    <?php endif; ?>
+                    
+                <?php endwhile; ?>
+            </ul>
+        </div>
     </div><!-- #masthead -->
     
     <?php endif; ?>

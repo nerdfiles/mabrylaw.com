@@ -52,6 +52,9 @@ body.blog h1 { }
 body.blog h2 { }
 body.blog h3 { }
 
+#carousel { font-family: 'Cardo', serif; line-height: 1; }
+#carousel h2 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; line-height: 1; }
+
 /** Copy and Forms Defaults */
     
 body,
@@ -71,3 +74,24 @@ input,textarea,select {
 body { }
 
 #masthead { clear: left; }
+
+#carousel { margin: 0 0 20px 0; width: 960px; height: 250px; }
+#carousel ul { margin: 0; height: 250px; list-style: none; }
+#carousel li { height: 250px; width: 940px; }
+
+    #carousel { position: relative; }
+    #carousel ul.carousel-container { position: relative; }
+    #carousel li.carousel-item { position: absolute; left: -9999px; }
+    #carousel li.carousel-item-0 { }
+    #carousel li.carousel-item-1 { left: 0; }
+    #carousel li.carousel-item-2 { }
+    #carousel li.carousel-item-3 { }
+    #carousel a.carousel-item-title-link { display: block; height: 250px; text-decoration: none; }
+    #carousel div.carousel-item-container {
+        height: 250px;
+        width: 940px; }
+    #carousel a.carousel-item-category-link {  }
+    #carousel a.carousel-item-category-link:hover { color: #fff; }
+    @media screen and (-webkit-min-device-pixel-ratio:0) { 
+        #carousel a.carousel-item-category-link { padding: 2px 8px; }
+    }

@@ -108,7 +108,7 @@ function twentyten_setup() {
     add_theme_support( 'loop-pagination' );
     add_theme_support( 'get-the-image' );
     add_theme_support( 'breadcrumb-trail' );
-    add_theme_support( 'entry-views' );
+    //add_theme_support( 'entry-views' );
     add_theme_support( 'custom-field-series' );
 
     /* Add theme support for WordPress features. */
@@ -160,8 +160,8 @@ function twentyten_setup() {
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to twentyten_header_image_width and twentyten_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 940 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 198 ) );
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyten_header_image_width', 960 ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyten_header_image_height', 250 ) );
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be 940 pixels wide by 198 pixels tall.
@@ -180,11 +180,16 @@ function twentyten_setup() {
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
-        'dummy' => array(
-            'url' => 'http://dummyimage.com/940x200/000/fff.png',
-            'thumbnail_url' => 'http://dummyimage.com/50x50/000/fff.png',
+        'dummy1' => array(
+            'url' => 'http://dummyimage.com/960x250/ccc/fff.png',
+            'thumbnail_url' => 'http://dummyimage.com/50x50/ccc/fff.png',
             'description' => __( 'dummy', 'twentyten' )
         ),
+        'dummy2' => array(
+            'url' => 'http://dummyimage.com/960x250/000/fff.png',
+            'thumbnail_url' => 'http://dummyimage.com/50x50/000/fff.png',
+            'description' => __( 'dummy', 'twentyten' )
+        )
       )
     );
     /*
@@ -578,14 +583,13 @@ function load_js() {
     <script type="text/javascript">
     
         $script('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery', function() {
-        
-            $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js', 'jqueryui');
-            $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js', 'jqueryuii18n');
             
             $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js/global.js', 'global');
             $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 'waypoints');
         
         });
+        $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js', 'jqueryui');
+        $script('http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js', 'jqueryuii18n');
         $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
         <?php if ( is_singular() && get_option( 'thread_comments' ) ) : ?>
         $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
@@ -657,4 +661,52 @@ function custom_page_header() {
     <?php
     
     endif;
+}
+
+add_filter("the_excerpt", "fancified_the_excerpt");
+
+function fancified_the_excerpt($content) {
+    fancy_excerpt(35, null, null, null, 'entry-excerpt');
+}
+
+function fancy_excerpt($length, $ellipsis, $words, $return, $class) {
+
+    // get text
+    $text = get_the_content();
+    $text = preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', $text);
+    $text = strip_tags($text);
+
+    // defaults
+    $length = (!$length) ? $length = 20 : $length = $length;
+    $ellipsis = (!$ellipsis) ? $ellipsis = '...' : $ellipsis = $ellipsis;
+    $words = (!$words) ? $words = true : $words = false;
+
+    // if chars
+    if (!$words) :
+        $excerpt = substr($text, 0, $length);
+        $excerpt = substr($text, 0, strripos($text, ' '));
+        $excerpt = $text.$ellipsis;
+
+    // if words
+    else :
+        $excerpt = explode(' ', $text, $length);
+        if (count($excerpt)>=$limit) {
+            array_pop($excerpt);
+            $excerpt = implode(' ', $excerpt) . '...';
+        } else {
+            $excerpt = implode(' ', $excerpt);
+        }
+
+        $excerpt = preg_replace('`\[[^\]]*\]`', '' , $excerpt);
+    endif;
+
+    $excerpt = '<p class="' . $class . '">' . $excerpt . '</p>';
+
+    // print
+    if (!$return) :
+        echo $excerpt;
+    else :
+        return $excerpt;
+    endif;
+
 }
