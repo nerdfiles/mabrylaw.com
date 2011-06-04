@@ -66,7 +66,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="site-container" class="hfeed column-layout show-guide-16 clearfix">
+<div id="site-container" class="hfeed column-layout ~show-guide-16 clearfix">
     
 	<div id="global-header" class="columns-16">
 	    
@@ -77,7 +77,6 @@
                 <li>
                     <a 
                         href="#language-switcher" 
-                        rel="internal"
                         id="skip-language-switcher"
                         title="<?php esc_attr_e( 'Change language', 'twentyten' ); ?>">
                         <?php _e( 'Change language', 'twentyten' ); ?>
@@ -86,7 +85,6 @@
                 <li>
                     <a 
                         href="#main" 
-                        rel="internal"
                         id="skip-main"
                         title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>">
                         <?php _e( 'Skip to content', 'twentyten' ); ?>
@@ -95,7 +93,6 @@
                 <li>
                     <a 
                         href="#search"
-                        rel="internal"
                         id="skip-search" 
                         title="<?php esc_attr_e( 'Skip to search', 'twentyten' ); ?>">
                         <?php _e( 'Skip to search', 'twentyten' ); ?>
@@ -104,7 +101,6 @@
                 <li>
                     <a 
                         href="#primary" 
-                        rel="internal"
                         id="skip-primary"
                         title="<?php esc_attr_e( 'Skip to primary sidebar', 'twentyten' ); ?>">
                         <?php _e( 'Skip to primary sidebar', 'twentyten' ); ?>
@@ -113,28 +109,31 @@
             </ul>
         </div><!-- #access -->
 	    
-	    <div id="language-switcher">
+	    <div id="language-switcher" class="columns-3 propel-7 begin">
+	        <!-- Weavely -->
             <ul>
-                <li><a href="?lang=en" title="English" rel="internal" id="lang-eng">English</a></li>
-                <li><a href="?lang=ch" title="Chuy&eacute;n" rel="internal" id="lang-chu">Chuy&eacute;n</a></li>
-                <li><a href="?lang=es" title="Spanish" rel="internal" id="lang-esp">Spanish</a></li>
+                <li><a href="?lang=en" title="English" id="lang-eng">English</a></li>
+                <li><a href="?lang=ch" title="Chuy&eacute;n" id="lang-chu">Chuy&eacute;n</a></li>
+                <li><a href="?lang=es" title="Spanish" id="lang-esp">Spanish</a></li>
             </ul>
         </div><!-- #language-switcher -->
         
-        <div id="search">
+        <div id="search" class="columns-6 propel-6 end">
+        <!-- Indeedly -->
         <?php get_search_form(); ?>
         </div><!-- #search -->
 		
-	</div><!-- #header -->
+	</div><!-- #global-header -->
 	
 	<div id="logo" class="columns-6">
         <?php $heading_tag = ( is_front_page() ) ? 'h1' : 'div'; ?>
         <<?php echo $heading_tag; ?> id="site-title">
-            <span>
-                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-            </span>
+                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                    <div><?php bloginfo( 'name' ); ?></div>
+                    <div id="site-tagline"><?php bloginfo( 'description' ); ?></div>
+                </a>
         </<?php echo $heading_tag; ?>>
-        <!--div id="site-description"><?php bloginfo( 'description' ); ?></div-->
+        
 	</div>
 	
 	<div id="nav" class="columns-10">

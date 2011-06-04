@@ -94,6 +94,15 @@ body { }
 
 #masthead { clear: left; }
 
+/* Logo */
+
+#logo { }
+    #site-title { background: url('_img-ui/mabry-logo.png') top left no-repeat; }
+
+/**
+ * Carousel
+ */
+
 #carousel { margin: 0 0 20px 0; width: 960px; height: 250px; }
 #carousel ul { margin: 0; height: 250px; list-style: none; }
 #carousel li { height: 250px; width: 940px; }

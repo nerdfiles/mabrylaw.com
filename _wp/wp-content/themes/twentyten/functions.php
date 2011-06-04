@@ -56,6 +56,74 @@ function super_mario_disable_sidebars( $sidebars_widgets ) {
     return $sidebars_widgets;
 }
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+add_action('init', 'register_rc', 1); // Set priority to avoid plugin conflicts
+
+function register_rc() { // A unique name for our function
+    $labels = array( // Used in the WordPress admin
+        'name' => _x('Resources', 'post type general name'),
+        'singular_name' => _x('Resource', 'post type singular name'),
+        'add_new' => _x('Add New', 'Resource'),
+        'add_new_item' => __('Add New Resource'),
+        'edit_item' => __('Edit Resource'),
+        'new_item' => __('New Resource'),
+        'view_item' => __('View Resource '),
+        'search_items' => __('Search Resources'),
+        'not_found' =>  __('Nothing found'),
+        'not_found_in_trash' => __('Nothing found in Trash')
+    );
+    $args = array(
+        'labels' => $labels, // Set above
+        'public' => true, // Make it publicly accessible
+        'hierarchical' => false, // No parents and children here
+        'menu_position' => 5, // Appear right below "Posts"
+        'has_archive' => 'resources', // Activate the archive
+        'supports' => array('title','editor','comments','thumbnail','custom-fields'),
+    );
+    register_post_type( 'resource', $args ); // Create the post type, use options above
+}
+
+$labels_presenter = array(
+    'name' => _x( 'Presenters', 'taxonomy general name' ),
+    'singular_name' => _x( 'Presenter', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Presenters' ),
+    'popular_items' => __( 'Popular Presenters' ),
+    'all_items' => __( 'All Presenters' ),
+    'edit_item' => __( 'Edit Presenter' ),
+    'update_item' => __( 'Update Presenter' ),
+    'add_new_item' => __( 'Add New Presenter' ),
+    'new_item_name' => __( 'New Presenter Name' ),
+    'separate_items_with_commas' => __( 'Separate presenters with commas' ),
+    'add_or_remove_items' => __( 'Add or remove presenters' ),
+    'choose_from_most_used' => __( 'Choose from the most used presenters' )
+); 
+
+register_taxonomy(
+'presenters', // The name of the custom taxonomy
+array( 'resource' ), // Associate it with our custom post type
+array(
+    'rewrite' => array( // Use "presenter" instead of "presenters" in the permalink
+        'slug' => 'presenter'
+        ),
+    'labels' => $labels_presenter
+    )
+);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -568,7 +636,7 @@ function dereg_scripts() {
     
 }    
  
-add_action('wp', 'dereg_scripts');
+add_action('wp_enqueue_scripts', 'dereg_scripts');
 
 /* ======= In-house JS ======= */
 
