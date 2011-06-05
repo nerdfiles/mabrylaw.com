@@ -52,7 +52,7 @@
 
 <link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:regular' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:regular,600' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&amp;_compress=false" />
@@ -70,7 +70,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="site-container" class="hfeed column-layout show-guide-16 clearfix">
+<div id="site-container" class="hfeed column-layout ~show-guide-16 clearfix">
     
 	<div id="global-header" class="columns-16">
 	    

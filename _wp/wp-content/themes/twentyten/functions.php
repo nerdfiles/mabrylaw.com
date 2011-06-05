@@ -90,6 +90,7 @@ function register_rc() { // A unique name for our function
     register_post_type( 'contributor', $args ); // Create the post type, use options above
 }
 
+/*
 $labels_presenter = array(
     'name' => _x( 'Presenters', 'taxonomy general name' ),
     'singular_name' => _x( 'Presenter', 'taxonomy singular name' ),
@@ -115,12 +116,7 @@ array(
     'labels' => $labels_presenter
     )
 );
- 
- 
- 
- 
- 
- 
+*/
  
  
  
@@ -378,7 +374,7 @@ function twentyten_custom_excerpt_more( $output ) {
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
+//add_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -705,6 +701,14 @@ function custom_page_header() {
     $category_id = get_cat_ID( $cat );
     $category_link = get_category_link( $category_id );
     $linkOutUrl = (is_single() || in_category($cat)) ? $category_link : get_permalink();
+    if ( get_post_type() != false ) :
+        $post_type = get_post_type();
+        if ($post_type == 'contributor') :
+            $parent = 'team';
+            $parentUrl = '../../'.$parent . '/';
+            $linkOutUrl = $parentUrl;
+        endif;
+    endif;
     
     if ( !(is_front_page()) ) :
 ?>
@@ -734,9 +738,11 @@ function custom_page_header() {
                     <?php echo $catName; ?>
             <?php else : ?>
                     <?php the_title(); ?>
-            <?php endif;
+            <?php endif; ?>
+            
+            <?php  echo $parent; ?>
         
-        if ($linkOut) : ?>
+        <?php if ($linkOut) : ?>
         </a>
         <?php endif; ?>
         
@@ -747,7 +753,7 @@ function custom_page_header() {
     endif;
 }
 
-add_filter("the_excerpt", "fancified_the_excerpt");
+//add_filter("the_excerpt", "fancified_the_excerpt");
 
 function fancified_the_excerpt($content) {
     fancy_excerpt(35, null, null, null, 'entry-excerpt');
