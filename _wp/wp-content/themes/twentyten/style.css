@@ -385,6 +385,18 @@ div.post { margin: 0 0 20px 0; }
 
 #primary .post a { color: #174b87; }
 
+/**
+ * Footer
+ */
+
+#footer { }
+    
+    #footer-logo { }
+    #colophon { }
+    #admin-footer ul { margin: 0; list-style: none; }
+    #admin-footer li { display: inline-block; *zoom: 1; *display: inline; margin: 0; }
+    #admin-footer a { font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif; }
+
     
 /**
  * Util WP

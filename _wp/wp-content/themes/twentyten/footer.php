@@ -12,7 +12,7 @@
 ?>
 	</div><!-- #main -->
 
-	<div id="footer" role="contentinfo" class="columns-16 clear-left">
+	<div id="footer" role="contentinfo" class="columns-16 clear-left basement-5">
 
 <?php
     /* A sidebar in the footer? Yep. You can can customize
@@ -21,15 +21,15 @@
     get_sidebar( 'footer' );
 ?>
 		    
-        <div id="footer-logo">
+        <div id="footer-logo" class="columns-16 begin end">
             <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         </div>
         
-        <div id="colophon">
-            
+        <div id="colophon" class="columns-8 begin">
+            ...
         </div>
     
-    	<div id="admin-footer">
+    	<div id="admin-footer" class="columns-8 end">
     		<ul>
     		    <li><a href="/_wp/wp-admin/">dashboard</a></li>
     		    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>
