@@ -49,8 +49,12 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+
 <link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:regular' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light' rel='stylesheet' type='text/css'>
+
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&amp;_compress=false" />
 <link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" /> 
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -109,7 +113,7 @@
             </ul>
         </div><!-- #access -->
 	    
-	    <div id="language-switcher" class="columns-3 propel-7 begin">
+	    <div id="language-switcher" class="columns-4 propel-7 begin">
 	        <!-- Weavely -->
             <ul>
                 <li><a href="?lang=en" title="English" id="lang-eng">English</a></li>
@@ -125,7 +129,7 @@
 		
 	</div><!-- #global-header -->
 	
-	<div id="logo" class="columns-6">
+	<div id="logo" class="columns-8">
         <?php $heading_tag = ( is_front_page() ) ? 'h1' : 'div'; ?>
         <<?php echo $heading_tag; ?> id="site-title">
                 <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -136,7 +140,7 @@
         
 	</div>
 	
-	<div id="nav" class="columns-10">
+	<div id="nav" class="columns-8">
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
         <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
     </div>
@@ -181,7 +185,12 @@
     </div><!-- #masthead -->
     
     <?php endif; ?>
+    
+    <div id="wide-header-bar-container">
+        <div id="wide-header-bar"></div>
+        <div id="graphic"></div>
+    </div>
 
-	<div id="main"  class="columns-16">
+	<div id="main"  class="columns-16 attic-3 basement-10">
 	    
 	    <?php do_action('custom_page_header'); ?>

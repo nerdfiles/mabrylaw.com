@@ -13,25 +13,30 @@
 	</div><!-- #main -->
 
 	<div id="footer" role="contentinfo" class="columns-16 clear-left">
-		<div id="colophon">
 
 <?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
+    /* A sidebar in the footer? Yep. You can can customize
+     * your footer with four columns of widgets.
+     */
+    get_sidebar( 'footer' );
 ?>
-
-			<div id="site-info">
-				<ul>
-				    <li><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-				    <li><a href="/_wp/wp-admin/">dashboard</a></li>
-				    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>
-				    <li><a href="http://jigsaw.w3.org/css-validator/validator?profile=css3&amp;warning=2&amp;uri=<?php echo curPageURL(); ?>">css</a></li>
-				</ul>
-			</div><!-- #site-info -->
-
-		</div><!-- #colophon -->
+		    
+        <div id="footer-logo">
+            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        </div>
+        
+        <div id="colophon">
+            
+        </div>
+    
+    	<div id="admin-footer">
+    		<ul>
+    		    <li><a href="/_wp/wp-admin/">dashboard</a></li>
+    		    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>
+    		    <li><a href="http://jigsaw.w3.org/css-validator/validator?profile=css3&amp;warning=2&amp;uri=<?php echo curPageURL(); ?>">css</a></li>
+    		</ul>
+    	</div><!-- #site-info -->
+    	
 	</div><!-- #footer -->
 
 </div><!-- #wrapper -->

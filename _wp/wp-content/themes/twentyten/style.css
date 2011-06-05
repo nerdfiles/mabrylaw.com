@@ -24,6 +24,18 @@ Tags: blue, white, two-columns, fixed-width, custom-header, threaded-comments, s
  * @package         mabrylaw.com
  */
 
+/** Copy and Forms Defaults */
+    
+body,
+h5,h6,
+p,
+table,
+ul,ol,dl,
+input,textarea,select { 
+    font-size: 1em;
+    font-family: 'Cardo', serif; 
+    line-height: 1.5;
+    color: #444; }
 
 /**
  * Typesetting
@@ -43,8 +55,14 @@ h2,h3,h4 {
     font-family: 'Cardo', serif; }
     
 h1 { font-size: 3em; }
-h2 { font-size: 2.7em; }
+
+h2 { 
+    font-size: 2.7em; 
+    color: #000; 
+    margin: 0 0 .325em 0; }
+
 h3 { font-size: 2.4em; }
+
 h4 { font-size: 2.1em; }
 
 body.home { }
@@ -64,19 +82,7 @@ body.blog h2 { }
 body.blog h3 { }
 
 #carousel { font-family: 'Cardo', serif; line-height: 1; }
-#carousel h2 { font-family: 'Oswald', 'Rockwell', arial, sans-serif; line-height: 1; }
-
-/** Copy and Forms Defaults */
-    
-body,
-h5,h6,
-p,
-table,
-ul,ol,dl,
-input,textarea,select { 
-    font-size: 1em;
-    font-family: 'Cardo', serif; 
-    line-height: 1.5; }
+#carousel h2 { color: #fff; font-family: 'Oswald', 'Rockwell', arial, sans-serif; line-height: 1; }
     
 /**
  * Utils
@@ -92,12 +98,197 @@ input,textarea,select {
 
 body { }
 
+#global-header { height: 40px; }
+
+/* Language Switcher */
+
+#language-switcher { 
+    color: #777; 
+    position: relative; 
+    top: 7px; }
+    
+    #language-switcher ul { 
+        margin: 0; 
+        list-style: none; }
+        
+    #language-switcher ul:before { 
+        opacity: .7; 
+        color: #777; 
+        content: "Toggle • "; 
+        font: 11px 'Open Sans'; 
+        text-transform: uppercase; 
+        font-variant: small-caps; }
+        
+    #language-switcher li { 
+        display: inline-block; 
+        *zoom: 1; 
+        *display: inline; 
+        margin: 0; }
+        
+    #language-switcher a { 
+        opacity: .7; 
+        color: #777; 
+        text-decoration: none; 
+        font: 11px 'Open Sans'; 
+        display: block; 
+        text-transform: uppercase; 
+        font-variant: small-caps; }
+        
+    #language-switcher a:hover { 
+        color: #222; 
+        opacity: 1; }
+    
+/* Search */
+
+#search { opacity: .8; position: relative; top: 5px; text-align: right; }
+
+#search:hover { opacity: 1; }
+
+    #search input { font: 11px 'Open Sans'; }
+    
+    #search .screen-reader-text { position: absolute; left: -9999px; }
+
+    #search #s { 
+        background: #fff;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        border-top-left-radius: 5px;
+        font-style: italic;
+        border-bottom: 1px #ddd solid;
+        padding: 3px 7px 3px 5px; 
+        width: 230px;
+        position: relative;
+        left: 23px; }
+    #searchsubmit { 
+        text-transform: uppercase; 
+        font-variant: small-caps; 
+        padding: 3px 7px; 
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-bottom-right-radius: 5px;
+        padding-left: 20px; 
+        background: #fff;
+        color: #777;
+        border-right: 1px #ddd solid; 
+        border-bottom: 1px #ddd solid; }
+ 
 #masthead { clear: left; }
 
 /* Logo */
 
 #logo { }
-    #site-title { background: url('_img-ui/mabry-logo.png') top left no-repeat; }
+    #site-title { 
+        background: url('_img-ui/mabry-logo.png') top left no-repeat; }
+    #site-title a { 
+        display: block; 
+        width: 464px; 
+        height: 76px; 
+        text-align: left;
+        text-indent: -9999px; }
+        
+/**
+ * Nav
+ * 
+ * Nav
+ * 
+ * @author          nerdfiles
+ */
+
+#nav { font-size: 1.1em; }
+
+    .menu-header { margin: 20px 0 0 120px; }
+    
+    #menu-main-navigation { 
+        display: inline-block; 
+        float: right; }
+
+#nav ul {
+    list-style: none;
+    margin: 0; }
+
+#nav li { float: left; } /* huzzah: since the text isn't around... */
+
+#nav li li { clear: left; }
+
+#nav a { 
+    display: block;
+    padding: .3em 1em;
+    font: 1em 'Open Sans Condensed';
+    text-decoration: none; }
+    
+#nav li li a { 
+    }
+
+#nav ul li ul { 
+    opacity: .7;
+    z-index: 9001;
+    position: absolute; 
+    left: -9999px;
+    background: #fff;
+    padding: 5px; }
+
+#nav ul li:hover ul { display: block; }
+
+#nav ul li.hover ul { display: block; }
+
+#nav ul.show-sub-menu { left: auto; }
+
+/**
+ * Wide Header
+ */
+
+#wide-header-bar-container {
+    width: 100%; 
+    position: absolute; 
+    left: -50%; 
+    top: 131px;
+    margin-left: 50%;
+}
+#wide-header-bar {
+    background: #00457e; 
+    height: 62px; 
+    width: 100%; 
+    border-bottom: 1px #67a4d0 solid; }
+#graphic {
+    height: 71px;
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    margin-left: -555px;
+    background: url('_img-ui/header-bg.png') no-repeat;
+}
+
+/**
+ * Page Title
+ * 
+ */
+
+.page-title { 
+    letter-spacing: 2px;
+    position: relative;
+    background: #00457e;
+    line-height: 1;
+    font-size: 30px;
+    margin: 0 0 18px 0;
+    height: 62px;
+    top: 0px\0/;
+    text-transform: uppercase; }
+.page-title a {
+    position: absolute;
+    bottom: -2px;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(gradientype=0,startColorstr='#60ff0000', endColorstr='#60ff0000');*/
+    background: transparent; 
+    zoom: 1;
+    padding: 10px 0 0 0;
+    text-shadow: 0 -1px 1px #093356;
+    text-decoration: none;
+    color: #fff; }
+    
+/**
+ * Main Content Area
+ */
+
+#container { padding: 10px 0 0 0; }
 
 /**
  * Carousel

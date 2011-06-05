@@ -20,6 +20,19 @@ $script.ready('jquery', function() {
         $('#skip-primary').attr('tabindex', '5');
         $('#logo').attr('tabindex', '6');
         
+        //$('#nav li').addClass('originize');
+        $('#nav ul li ul').addClass('hide');
+        $('#menu-main-navigation').addClass('clearfix');
+        $('#nav ul li').hover(function() {
+            $(this).addClass('hover');
+            $(this).find('ul').removeClass('hide').addClass('show-sub-menu');
+        }, function() {
+            $(this).removeClass('hover');
+            $(this).find('ul').addClass('hide').removeClass('show-sub-menu');
+        });
+        
+        $('#s').attr('placeholder', 'What would you like to find?');
+        
     });
 
 /**
