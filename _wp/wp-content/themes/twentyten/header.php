@@ -113,12 +113,12 @@
             </ul>
         </div><!-- #access -->
 	    
-	    <div id="language-switcher" class="columns-4 propel-7 begin">
+	    <div id="language-switcher" class="columns-4 propel-8 begin">
 	        <!-- Weavely -->
             <ul>
-                <li><a href="?lang=en" title="English" id="lang-eng">English</a></li>
+                <li><a href="?lang=en" title="English" id="lang-eng">Toggle</a></li>
                 <li><a href="?lang=ch" title="Chuy&eacute;n" id="lang-chu">Chuy&eacute;n</a></li>
-                <li><a href="?lang=es" title="Spanish" id="lang-esp">Spanish</a></li>
+                <li><a href="?lang=es" title="Spanish" id="lang-esp">Cambiar</a></li>
             </ul>
         </div><!-- #language-switcher -->
         

@@ -67,56 +67,56 @@ add_action('init', 'register_rc', 1); // Set priority to avoid plugin conflicts
 
 function register_rc() { // A unique name for our function
     $labels = array( // Used in the WordPress admin
-        'name' => _x('Contributors', 'post type general name'),
-        'singular_name' => _x('Contributor', 'post type singular name'),
-        'add_new' => _x('Add New', 'Contributor'),
-        'add_new_item' => __('Add New Contributor'),
-        'edit_item' => __('Edit Contributor'),
-        'new_item' => __('New Contributor'),
-        'view_item' => __('View Contributor'),
-        'search_items' => __('Search Contributors'),
+        'name' => _x('Team', 'post type general name'),
+        'singular_name' => _x('Team', 'post type singular name'),
+        'add_new' => _x('Add New Contributor', 'Team'),
+        'add_new_item' => __('Add New Team Contributor'),
+        'edit_item' => __('Edit Team Contributor'),
+        'new_item' => __('New Team Contributor'),
+        'view_item' => __('View Team Contributor'),
+        'search_items' => __('Search Team Contributors'),
         'not_found' =>  __('No contributor listed under that name.'),
         'not_found_in_trash' => __('No contributor listed under that name.')
     );
     $args = array(
         'labels' => $labels, // Set above
         'public' => true, // Make it publicly accessible
-        'hierarchical' => false, // No parents and children here
+        'hierarchical' => true, // No parents and children here
         'menu_position' => 5, // Appear right below "Posts"
-        'has_archive' => 'contributors', // Activate the archive
+        'has_archive' => 'team', // Activate the archive
         'supports' => array('title','editor','thumbnail','custom-fields','revisions','page-attributes', 'excerpt'),
         'description' => 'The contributors of Mabry Law Firm.'
     );
-    register_post_type( 'contributor', $args ); // Create the post type, use options above
+    register_post_type( 'team', $args ); // Create the post type, use options above
 }
 
-/*
-$labels_presenter = array(
-    'name' => _x( 'Presenters', 'taxonomy general name' ),
-    'singular_name' => _x( 'Presenter', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Presenters' ),
-    'popular_items' => __( 'Popular Presenters' ),
-    'all_items' => __( 'All Presenters' ),
-    'edit_item' => __( 'Edit Presenter' ),
-    'update_item' => __( 'Update Presenter' ),
-    'add_new_item' => __( 'Add New Presenter' ),
-    'new_item_name' => __( 'New Presenter Name' ),
-    'separate_items_with_commas' => __( 'Separate presenters with commas' ),
-    'add_or_remove_items' => __( 'Add or remove presenters' ),
-    'choose_from_most_used' => __( 'Choose from the most used presenters' )
+
+$labels_project = array(
+    'name' => _x( 'Projects', 'taxonomy general name' ),
+    'singular_name' => _x( 'Project', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Projects' ),
+    'popular_items' => __( 'Popular Projects' ),
+    'all_items' => __( 'All Projects' ),
+    'edit_item' => __( 'Edit Project' ),
+    'update_item' => __( 'Update Project' ),
+    'add_new_item' => __( 'Add New Project' ),
+    'new_item_name' => __( 'New Project Name' ),
+    'separate_items_with_commas' => __( 'Separate projects with commas' ),
+    'add_or_remove_items' => __( 'Add or remove projects' ),
+    'choose_from_most_used' => __( 'Choose from the most used projects' )
 ); 
 
 register_taxonomy(
-'presenters', // The name of the custom taxonomy
-array( 'resource' ), // Associate it with our custom post type
+'projects', // The name of the custom taxonomy
+array( 'team' ), // Associate it with our custom post type
 array(
     'rewrite' => array( // Use "presenter" instead of "presenters" in the permalink
-        'slug' => 'presenter'
+        'slug' => 'project'
         ),
-    'labels' => $labels_presenter
+    'labels' => $labels_project
     )
 );
-*/
+
  
  
  
@@ -703,7 +703,7 @@ function custom_page_header() {
     $linkOutUrl = (is_single() || in_category($cat)) ? $category_link : get_permalink();
     if ( get_post_type() != false ) :
         $post_type = get_post_type();
-        if ($post_type == 'contributor') :
+        if ($post_type == 'team') :
             $parent = 'team';
             $parentUrl = '../../'.$parent . '/';
             $linkOutUrl = $parentUrl;

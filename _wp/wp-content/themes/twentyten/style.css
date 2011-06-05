@@ -24,6 +24,12 @@ Tags: blue, white, two-columns, fixed-width, custom-header, threaded-comments, s
  * @package         mabrylaw.com
  */
 
+::selection {
+    background: #6c89b3;
+    color: #fff;
+    text-shadow: 0 0 2px #222;
+}
+
 /** Copy and Forms Defaults */
     
 body,
@@ -39,7 +45,7 @@ input,textarea,select {
     
     
 img.alignright { float: right; }
-img.alignleft { float: left; }
+img.alignleft { float: left; margin: .3em 1em 1em 0; }
 
 /**
  * Typesetting
@@ -116,19 +122,18 @@ body { }
         margin: 0; 
         list-style: none; }
         
-    #language-switcher ul:before { 
-        opacity: .7; 
-        color: #777; 
-        content: "Toggle • "; 
-        font: 11px 'Open Sans'; 
-        text-transform: uppercase; 
-        font-variant: small-caps; }
-        
     #language-switcher li { 
         display: inline-block; 
         *zoom: 1; 
         *display: inline; 
         margin: 0; }
+    
+    /* 
+    #language-switcher li a:after {
+        content: " • ";
+        display: inline-block;
+    }
+    */
         
     #language-switcher a { 
         opacity: .7; 
@@ -301,10 +306,10 @@ body { }
 #container { padding: 15px 0 0 0; }
 
 /**
- * Contributors
+ * teams
  */
 
-body.single-contributor .entry-meta { display: none; }
+body.single-team .entry-meta { display: none; }
 
 /**
  * Blog
@@ -337,22 +342,22 @@ div.post { margin: 0 0 20px 0; }
         margin: 0 0 20px 0;
         border-bottom: 1px #ccc solid; }
 
-#primary .contributor { 
+#primary .team { 
     margin: 0 0 15px 0; 
     font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
     clear: left; }
 
-#primary .contributor a { color: #174b87; }
+#primary .team a { color: #174b87; }
 
-#primary .contributor .thumbnail { 
+#primary .team .thumbnail { 
     float: left; 
     margin: 0 15px 10px 0; }
         
-#primary .contributor .entry-title { font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
+#primary .team .entry-title { font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
 
-#primary .contributor .entry-summary { padding-left: 95px; }
+#primary .team .entry-summary { padding-left: 95px; }
 
-#primary .contributor .entry-summary p { 
+#primary .team .entry-summary p { 
     font-size: 12px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
     
