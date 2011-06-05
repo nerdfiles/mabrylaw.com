@@ -67,26 +67,27 @@ add_action('init', 'register_rc', 1); // Set priority to avoid plugin conflicts
 
 function register_rc() { // A unique name for our function
     $labels = array( // Used in the WordPress admin
-        'name' => _x('Resources', 'post type general name'),
-        'singular_name' => _x('Resource', 'post type singular name'),
-        'add_new' => _x('Add New', 'Resource'),
-        'add_new_item' => __('Add New Resource'),
-        'edit_item' => __('Edit Resource'),
-        'new_item' => __('New Resource'),
-        'view_item' => __('View Resource '),
-        'search_items' => __('Search Resources'),
-        'not_found' =>  __('Nothing found'),
-        'not_found_in_trash' => __('Nothing found in Trash')
+        'name' => _x('Contributors', 'post type general name'),
+        'singular_name' => _x('Contributor', 'post type singular name'),
+        'add_new' => _x('Add New', 'Contributor'),
+        'add_new_item' => __('Add New Contributor'),
+        'edit_item' => __('Edit Contributor'),
+        'new_item' => __('New Contributor'),
+        'view_item' => __('View Contributor'),
+        'search_items' => __('Search Contributors'),
+        'not_found' =>  __('No contributor listed under that name.'),
+        'not_found_in_trash' => __('No contributor listed under that name.')
     );
     $args = array(
         'labels' => $labels, // Set above
         'public' => true, // Make it publicly accessible
         'hierarchical' => false, // No parents and children here
         'menu_position' => 5, // Appear right below "Posts"
-        'has_archive' => 'resources', // Activate the archive
-        'supports' => array('title','editor','comments','thumbnail','custom-fields'),
+        'has_archive' => 'contributors', // Activate the archive
+        'supports' => array('title','editor','thumbnail','custom-fields','revisions','page-attributes', 'excerpt'),
+        'description' => 'The contributors of Mabry Law Firm.'
     );
-    register_post_type( 'resource', $args ); // Create the post type, use options above
+    register_post_type( 'contributor', $args ); // Create the post type, use options above
 }
 
 $labels_presenter = array(
@@ -793,6 +794,17 @@ function fancy_excerpt($length, $ellipsis, $words, $return, $class) {
     endif;
 
 }
+
+function wp_admin_custom_css() {
+?>
+<style type="text/css">
+    .widget-control-actions { clear: right; }
+    .widget-context { border: 1px #D1E5EE solid; padding-right: 10px; }
+</style>
+<?php    
+}
+
+add_action('admin_print_styles', 'wp_admin_custom_css');
 
 function childtheme_mce_btns2($orig) {
 return array('formatselect', 'styleselect', '|', 'pastetext', 'pasteword', 'removeformat', '|', 'outdent', 'indent', '|', 'undo', 'redo', 'wp_help', 'mymenubutton' );

@@ -98,14 +98,14 @@ body.blog h3 { }
 
 body { }
 
-#global-header { height: 40px; }
+#global-header { height: 60px; }
 
 /* Language Switcher */
 
 #language-switcher { 
     color: #777; 
     position: relative; 
-    top: 7px; }
+    top: 12px; }
     
     #language-switcher ul { 
         margin: 0; 
@@ -140,7 +140,7 @@ body { }
     
 /* Search */
 
-#search { opacity: .8; position: relative; top: 5px; text-align: right; }
+#search { opacity: .8; position: relative; top: 10px; text-align: right; }
 
 #search:hover { opacity: 1; }
 
@@ -225,7 +225,7 @@ body { }
     position: absolute; 
     left: -9999px;
     background: #fff;
-    padding: 5px; }
+    padding: 5px 0; }
 
 #nav ul li:hover ul { display: block; }
 
@@ -241,7 +241,7 @@ body { }
     width: 100%; 
     position: absolute; 
     left: -50%; 
-    top: 131px;
+    top: 156px;
     margin-left: 50%;
 }
 #wide-header-bar {
@@ -273,6 +273,7 @@ body { }
     height: 62px;
     top: 0px\0/;
     text-transform: uppercase; }
+    
 .page-title a {
     position: absolute;
     bottom: -2px;
@@ -284,11 +285,60 @@ body { }
     text-decoration: none;
     color: #fff; }
     
+.page-title a:hover { text-shadow: 0 0 .2em #6c89b3; }
+    
 /**
  * Main Content Area
  */
 
+#main { margin-bottom: 30px; }
+
 #container { padding: 10px 0 0 0; }
+
+/**
+ * Blog
+ */
+
+body.archive,
+body.category { }
+
+body.archive #main,
+body.category #main { }
+
+div.post { margin: 0 0 20px 0; }
+
+.entry-title a { color: #000; text-decoration: none; }
+
+/**
+ * Secondary
+ */
+
+#primary { padding: 10px 0 0; }
+
+    #primary ul.xoxo { margin: 0; list-style: none; }
+    
+    #primary li.widget-container { margin: 0; }
+    
+    #primary .widget-title { 
+        font-size: 24px;
+        padding: 0 0 0 0;
+        margin: 0 0 15px 0;
+        border-bottom: 1px #ccc solid; }
+
+#primary .contributor { 
+    margin: 0 0 15px 0; 
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+    clear: left; }
+
+#primary .contributor a { color: #174b87; }
+
+#primary .contributor .thumbnail { 
+    float: left; 
+    margin: 0 15px 10px 0; }
+        
+#primary .contributor .entry-title { font: 16px 'Open Sans', Helvetica, Arial, sans-serif; }
+
+#primary .contributor .entry-summary { }
 
 /**
  * Carousel

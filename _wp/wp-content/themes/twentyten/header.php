@@ -70,7 +70,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="site-container" class="hfeed column-layout ~show-guide-16 clearfix">
+<div id="site-container" class="hfeed column-layout show-guide-16 clearfix">
     
 	<div id="global-header" class="columns-16">
 	    
@@ -191,6 +191,6 @@
         <div id="graphic"></div>
     </div>
 
-	<div id="main"  class="columns-16 attic-3 basement-10">
+	<div id="main"  class="columns-16 attic-4">
 	    
 	    <?php do_action('custom_page_header'); ?>
