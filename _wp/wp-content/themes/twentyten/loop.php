@@ -127,14 +127,11 @@
 <?php /* How to display all other posts. */ ?>
 
 	<?php else : ?>
+	    
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
             <!-- loop.php > do_action('custom_entry_title'); -->
             <?php do_action('custom_entry_title'); ?>
-            
-			<div class="entry-meta">
-				<?php twentyten_posted_on(); ?>
-			</div><!-- .entry-meta -->
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">

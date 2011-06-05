@@ -560,18 +560,53 @@ if ( ! function_exists( 'twentyten_posted_on' ) ) :
  * @since Twenty Ten 1.0
  */
 function twentyten_posted_on() {
-	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'twentyten' ),
+    // Retrieves tag list of current post, separated by commas.
+    $tag_list = get_the_tag_list( '', ', ' );
+    if ( $tag_list ) {
+        $posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
+    } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+        $posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
+    } else {
+        $posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
+    }
+
+    if ( $tag_list ) {
+        $tag_list = '<span class="meta-sep">&bull;</span> ' . $tag_list;
+    }
+
+    /*
+    // Prints the string, replacing the placeholders.
+    printf(
+        $posted_in,
+        get_the_category_list( ', ' ),
+        $tag_list,
+        get_permalink(),
+        the_title_attribute( 'echo=0' )
+    );
+    */
+    
+	printf( 
+	    
+	    __( '%2$s %3$s', 'twentyten' ),
+	    
 		'meta-prep meta-prep-author',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+		
+		sprintf( '<span class="entry-date"><a href="%1$s" title="%2$s" rel="bookmark">%3$s</a></span>',
 			get_permalink(),
 			esc_attr( get_the_time() ),
-			get_the_date()
+			get_the_date('m\.d\.Y')
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+		
+        /*
+		sprintf( '<span class="entry-author author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
 			sprintf( esc_attr__( 'View all posts by %s', 'twentyten' ), get_the_author() ),
 			get_the_author()
 		)
+        */
+        
+        $tag_list
+        
 	);
 }
 endif;
@@ -686,6 +721,11 @@ function custom_entry_title() {
     
     if (!is_page() || is_front_page() || is_home()):
     ?>
+    
+    <div class="entry-meta">
+    <?php twentyten_posted_on(); ?>
+    </div><!-- .entry-meta -->
+    
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 <?php
     endif;
@@ -693,59 +733,27 @@ function custom_entry_title() {
 
 add_action('custom_page_header', 'custom_page_header');
 
-function custom_page_header() { 
-    $linkOut = (!is_404());
-    $current_category = get_the_category();
-    $catName = $current_category[0]->cat_name;
-    $cat = $current_category[0]->category_nicename;
-    $category_id = get_cat_ID( $cat );
-    $category_link = get_category_link( $category_id );
-    $linkOutUrl = (is_single() || in_category($cat)) ? $category_link : get_permalink();
-    if ( get_post_type() != false ) :
-        $post_type = get_post_type();
-        if ($post_type == 'team') :
-            $parent = 'team';
-            $parentUrl = '../../'.$parent . '/';
-            $linkOutUrl = $parentUrl;
-        endif;
-    endif;
+function custom_page_header() {
+    $post_type = get_post_type();
+    $titleText = get_the_title();
+    $titleUrl = "";
+    $url = get_bloginfo('url');
+    
+    if ( $post_type == 'page' ) {
+        $titleText = $titleText;
+        $titleUrl = '.';
+    } else if ( $post_type == 'team' ) {
+        $titleText = "team";
+        $titleUrl = $url . "/team/";
+    } else if ( $post_type == 'post' ) {
+        $titleText = "news";
+        $titleUrl = $url . "/news/";
+    }
     
     if ( !(is_front_page()) ) :
 ?>
     <h1 class="page-title">
-        
-        <?php if ($linkOut) : ?>
-            <a href="<?php echo $linkOutUrl; ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-        <?php endif; ?>
-        
-            <?php if ( is_day() ) : ?>
-                <?php printf( __( 'Daily Archives: <span>%s</span>', 'twentyten' ), get_the_date() ); ?>
-            <?php elseif ( is_category() ) : ?>
-                <?php printf( __( '%s', 'twentyten' ), single_cat_title( '', false ) ); ?>
-            <?php elseif ( is_tag() ) : ?>
-                <?php printf( __( 'Tag Archives: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
-            <?php elseif (is_author() ) : ?>
-                <?php printf( __( 'Author Archives: %s', 'twentyten' ), "<span class='vcard'><a class='url fn n' href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "' title='" . esc_attr( get_the_author() ) . "' rel='me'>" . get_the_author() . "</a></span>" ); ?>
-            <?php elseif ( is_month() ) : ?>
-                <?php printf( __( 'Monthly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'F Y' ) ); ?>
-            <?php elseif ( is_year() ) : ?>
-                <?php printf( __( 'Yearly Archives: <span>%s</span>', 'twentyten' ), get_the_date( 'Y' ) ); ?>
-            <?php elseif ( is_404() ) : ?>
-                    <?php _e( 'Not Found', 'twentyten' ); ?>
-            <?php elseif( is_page() ) : ?>
-                    <?php the_title(); ?>
-            <?php elseif( is_single() ) : ?>
-                    <?php echo $catName; ?>
-            <?php else : ?>
-                    <?php the_title(); ?>
-            <?php endif; ?>
-            
-            <?php  echo $parent; ?>
-        
-        <?php if ($linkOut) : ?>
-        </a>
-        <?php endif; ?>
-        
+        <a href="<?php echo $titleUrl; ?>"><?php echo $titleText; ?></a>
     </h1>
     
     <?php

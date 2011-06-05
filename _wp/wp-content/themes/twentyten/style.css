@@ -327,7 +327,19 @@ div.post { margin: 0 0 20px 0; }
 .entry-title a { color: #000; text-decoration: none; }
 
 /**
- * Secondary
+ * Meta
+ */
+
+.entry-meta { margin: 0 0 .5em 0; color: #777; }
+
+.entry-meta a {
+    color: #777;
+    text-decoration: none;
+    text-transform: uppercase; 
+    font: .9em 'Open Sans', Helvetica, Arial, sans-serif; } 
+
+/**
+ * Sidebar
  */
 
 #primary { padding: 15px 0 0; }
@@ -341,6 +353,8 @@ div.post { margin: 0 0 20px 0; }
         padding: 0 0 0 0;
         margin: 0 0 20px 0;
         border-bottom: 1px #ccc solid; }
+        
+/* Team */
 
 #primary .team { 
     margin: 0 0 15px 0; 
@@ -361,11 +375,22 @@ div.post { margin: 0 0 20px 0; }
     font-size: 12px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
     
+/* Latest */
+
+#primary div.post { margin: 0 0 10px 0; }
+
+#primary .post .byline { margin: 0; }
+
+#primary .post .entry-title { font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
+
+#primary .post a { color: #174b87; }
+
+    
 /**
  * Util WP
  */
 
-.entry-utility { clear: left; padding: 20px 0 0; }
+.entry-utility { clear: left; padding: 20px 0 0; display: none; }
 
 /**
  * Carousel
