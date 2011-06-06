@@ -24,10 +24,23 @@ $script.ready('jquery', function() {
             
             $(this).animate({
                 opacity: .5
-            }, 300).delay(100).animate({
+            }, 100).delay(50).animate({
                 opacity: 1
             }, 200);
         });
+        
+        // Set external
+        
+        $('a[rel="external"]').bind('click', function(e) {
+            var $self = $(this);
+            $self.addClass('external');
+            window.open($self.attr('href'));
+            e.preventDefault();
+        });
+        
+        // Show Google Map
+        
+        $('#google-map').delay(100).removeClass('hide').hide().delay(100).fadeIn();
         
         // Set focus to search
         
@@ -71,7 +84,7 @@ $script.ready('jquery', function() {
         $('input[name="input_fullName"]').attr('validate', '{required:true, messages: { \
             required: "Please provide your full name." \
         }}');
-        $('input[name="input_email"]').attr('validate', '{required:true, messages: { \
+        $('input[name="input_email"]').attr('validate', '{required:true, email: true, messages: { \
             required: "Please provide a valid e-mail address." \
         }}');
         $('input[name="input_subject"]').attr('validate', '{required:true, messages: { \
