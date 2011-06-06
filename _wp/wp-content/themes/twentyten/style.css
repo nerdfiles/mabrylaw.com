@@ -204,9 +204,9 @@ body { }
  * @author          nerdfiles
  */
 
-#nav { font-size: 1.1em; }
+#nav { font-size: 1.1em; text-transform: uppercase; }
 
-    .menu-header { margin: 20px 0 0 120px; }
+    .menu-header { margin: 20px 0 0 0; }
     
     #menu-main-navigation { 
         display: inline-block; 
@@ -222,7 +222,7 @@ body { }
 
 #nav a { 
     display: block;
-    padding: .3em 1em;
+    padding: .3em .7em;
     font: 1em 'Open Sans Condensed';
     text-decoration: none; }
     
@@ -230,7 +230,6 @@ body { }
     }
 
 #nav ul li ul { 
-    opacity: .7;
     z-index: 9001;
     position: absolute; 
     left: -9999px;
@@ -267,6 +266,9 @@ body { }
     margin-left: -555px;
     background: url('_img-ui/header-bg.png') no-repeat;
 }
+
+body.home #wide-header-bar { height: 250px; }
+body.home #graphic { background: none; }
 
 /**
  * Page Title
@@ -342,7 +344,20 @@ div.post { margin: 0 0 20px 0; }
  * Sidebar
  */
 
-#primary { padding: 15px 0 0; }
+#primary { 
+    padding: 15px 0 0; 
+    font-size: 12px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+    
+    #primary
+    #primary h5, #primary h6,
+    #primary p,
+    #primary table,
+    #primary ul, #primary ol, #primary dl,
+    #primary input, #primary textarea, #primary select {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+        
+/* Widgets */
 
     #primary ul.xoxo { margin: 0; list-style: none; }
     
@@ -353,6 +368,13 @@ div.post { margin: 0 0 20px 0; }
         padding: 0 0 0 0;
         margin: 0 0 20px 0;
         border-bottom: 1px #ccc solid; }
+        
+    #primary .widget-container.posts ul { margin-left: 0; margin-bottom: 3em; list-style: none; }
+        
+/* Section Pages */
+
+#primary li.type-page { }
+#primary li.type-page a { display: block; padding: 0 .5em .3em 0; color: #174b87; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
         
 /* Team */
 
@@ -371,9 +393,7 @@ div.post { margin: 0 0 20px 0; }
 
 #primary .team .entry-summary { padding-left: 95px; }
 
-#primary .team .entry-summary p { 
-    font-size: 12px;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+#primary .team .entry-summary p { }
     
 /* Latest */
 
@@ -384,6 +404,20 @@ div.post { margin: 0 0 20px 0; }
 #primary .post .entry-title { font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
 
 #primary .post a { color: #174b87; }
+
+/* Junk */
+
+dl.contact-info { }
+dl.contact-info dt { float: left; clear: right; }
+dl.contact-info dd { float: right; margin: 0 0 .5em 0; }
+dl.contact-info address { margin: 0; font-style: normal; text-align: right; }
+dl.contact-info span { }
+dl.contact-info .street-address { display: block; }
+dl.contact-info .locality { }
+dl.contact-info .region { }
+dl.contact-info .postal-code { }
+dl.contact-info .email { border-bottom: none; }
+
 
 /**
  * Footer

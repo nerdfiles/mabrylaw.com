@@ -25,40 +25,53 @@
     
 -->
 <html class="no-js" <?php language_attributes(); ?>>
+    
 <head>
+    
 <meta charset="utf-8" />
+
 <title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
+/*
+ * Print the <title> tag based on what is being viewed.
+ */
+global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+wp_title( '|', true, 'right' );
 
-	// Add the blog name.
-	bloginfo( 'name' );
+// Add the blog name.
+bloginfo( 'name' );
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+// Add the blog description for the home/front page.
+$site_description = get_bloginfo( 'description', 'display' );
+if ( $site_description && ( is_home() || is_front_page() ) )
+	echo " | $site_description";
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+// Add a page number if necessary:
+if ( $paged >= 2 || $page >= 2 )
+	echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
 
-	?></title>
+?></title>
+
+<!-- Other Meta -->
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
+<!-- GDGS -->
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&amp;_compress=false" />
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+    
+<!-- Google Web Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:regular,600' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light' rel='stylesheet' type='text/css'>
-
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/gdgs/_css-lib/gdgs/module-importer.php?_modules=reset.css,font.css,typesetting.css,system.css,form.css,tools.css,table.css,bounds.css,standardize.css,engine-importer.css,browser-importer.css,device-importer.css,page.css,print.css&amp;_compress=false" />
+    
+<!-- JS Plugin CSS -->
 <link rel="stylesheet" type="text/css" media="all" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" /> 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    
+<!-- WP Head -->
 <?php
 	/* Always have wp_head() just before the closing </head>
 	 * tag of your theme, or you will break many plugins, which
@@ -67,6 +80,7 @@
 	 */
 	wp_head();
 ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -142,12 +156,12 @@
 	
 	<div id="nav" class="columns-8">
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-        <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+        <?php wp_nav_menu( array( 'container_class' => 'menu-header clearfix', 'theme_location' => 'primary' ) ); ?>
     </div>
     
     <?php if (is_front_page()) : ?>
     
-    <div id="masthead" class="columns-16">
+    <div id="masthead" class="columns-16 attic-4">
         <div id="carousel">
             <ul>
                 <?php 
