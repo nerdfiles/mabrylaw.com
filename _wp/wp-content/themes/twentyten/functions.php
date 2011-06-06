@@ -676,16 +676,28 @@ function load_js() {
 <script src="<?php bloginfo( 'stylesheet_directory' ); ?>/script.js/dist/script.min.js"></script>
 
 <script type="text/javascript">
-
+    
     // jquery
     //$script('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery');
     $script([
-        'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 
-        '<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js', 
-        'http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js' 
-        //'http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js'
+    
+        'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',
+        '<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery.metadata.js',
+        'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.min.js',
+        'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/additional-methods.min.js',
+        '<?php bloginfo( 'stylesheet_directory' ); ?>/_js-lib/jquery-waypoints/waypoints.min.js',
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js',
+        <?php $lang = $_GET['lang'];
+        if ($lang != '' && $lang != 'en' ) : ?>
+        'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/localization/messages_<?php echo $lang; ?>'
+        <?php endif; ?>
+        
         ], 
     'jquery');
+    
+    // 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/localization/messages_XX.js' 
+    // messages_ja.js | Vietnamese
+    // messages_es.js | Spanish
     
     // jquery plugins - ready from the outside
     /*

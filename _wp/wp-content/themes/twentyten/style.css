@@ -222,6 +222,7 @@ body { }
     padding: .3em .7em;
     font: 1em 'Open Sans Condensed';
     text-decoration: none; }
+#nav a:hover { }
     
 #nav li li a { 
     }
@@ -373,6 +374,18 @@ div.post { margin: 0 0 20px 0; }
 #primary li.type-page { }
 #primary li.type-page a { opacity: .6; display: block; padding: 0 .5em .3em 0; color: #174b87; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
 #primary li.type-page a:hover { opacity: 1; }
+
+/*
+
+Navigation Menu Widget "Our Services" Set to Inactive 
+
+#primary .nav-menu { margin-left: 0; margin-bottom: 3em; list-style: none; }
+#primary li.menu-item a { text-decoration: none; opacity: .6; display: block; padding: 0 .5em .3em 0; color: #174b87; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
+#primary li.menu-item a:hover { opacity: 1; }
+#primary li.menu-item-type-post_type { } 
+#primary li.menu-item-object-page { }
+
+*/ 
         
 /* Team */
 
@@ -438,6 +451,52 @@ dl.contact-info .email { border-bottom: none; }
  */
 
 .entry-utility { clear: left; padding: 20px 0 0; display: none; }
+
+
+/**
+ * Forms
+ */
+
+.wpcf7-form { }
+.wpcf7-form label { 
+    margin-top: .4em;
+    display: block;
+    opacity: .7; }
+.wpcf7-form label:hover {
+    opacity: 1; }
+.wpcf7-form label.error { 
+    color: #ea1717;
+    background: url('_img-ui/icons/fugue/bonus/icons-24/exclamation.png') 0 10px no-repeat;
+    padding: 12px 0 0 32px;
+    margin: 0; }
+.wpcf7-form .textarea_message label.error { 
+    background-position: 0 2px;
+    padding: 4px 0 0 32px; }
+.wpcf7-form p { margin: .7em 0 0 0; font-size: .8em; vertical-align: middle; }
+.wpcf7-form dt { clear: left; }
+.wpcf7-form dd { position: relative; }
+.wpcf7-form input,
+.wpcf7-form textarea { 
+    padding: .3em;  
+    border: solid 1px #e5e5e5;  
+    outline: 0;  
+    width: 260px; 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    background: -webkit-gradient(linear, left top, left 25, from(#ffffff), color-stop(4%, #eeeeee), to(#ffffff));  
+    background: -moz-linear-gradient(top, #ffffff, #eeeeee 1px, #ffffff 25px); }
+.wpcf7-form input:hover, .wpcf7-form textarea:hover,  
+.wpcf7-form input:focus, .wpcf7-form textarea:focus {  
+    border-color: #9ec0ef; 
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px; }
+.wpcf7-form input { }
+.wpcf7-form textarea { 
+    line-height: 150%; 
+    height: 100px;
+    resize: none; }
+.wpcf7-form .wpcf7-submit { width: 270px; font-size: 1.3em; }
+.wpcf7-form-control-wrap { margin: 0 0 1em 0; display: block; }
 
 /**
  * Carousel

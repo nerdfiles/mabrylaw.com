@@ -3,6 +3,10 @@
  */
 
 $script.ready('jquery', function() {
+    
+// plugin init
+
+    $.metadata.setType("attr", "validate");
 
 // other stuff
 
@@ -16,7 +20,13 @@ $script.ready('jquery', function() {
         
         $("a[title='"+$.trim($('h1').text())+"']").each(function() {
             
-            $(this).addClass('current-page').parent().addClass('current-page-container');
+            //$(this).addClass('current-page').parent().addClass('current-page-container');
+            
+            $(this).animate({
+                opacity: .5
+            }, 300).delay(100).animate({
+                opacity: 1
+            }, 200);
         });
         
         // Set focus to search
@@ -48,6 +58,38 @@ $script.ready('jquery', function() {
         // Set placeholder for modern browsers
         
         $('#s').attr('placeholder', 'What would you like to find?');
+        
+        /**
+         * Form Validation
+         */
+        
+        /* Contact Form validation */
+       
+        $('#wpcf7-f1-p209-o1 form').attr('id', 'form_wpcf7-f1-p209-o1');  // Give Contact form id for plugin
+        
+        // Inputs 
+        $('input[name="input_fullName"]').attr('validate', '{required:true, messages: { \
+            required: "Please provide your full name." \
+        }}');
+        $('input[name="input_email"]').attr('validate', '{required:true, messages: { \
+            required: "Please provide a valid e-mail address." \
+        }}');
+        $('input[name="input_subject"]').attr('validate', '{required:true, messages: { \
+            required: "What is your message about?" \
+        }}');
+        $('textarea[name="textarea_message"]').attr('validate', '{required:true, messages: { \
+            required: "What would you like to say?" \
+        }}');
+        
+        $('#wpcf7-f1-p209-o1 form').validate(); // Contact Form validation
+        
+        /* Request Legal Services Form validation */
+        
+        $('#wpcf7-f1-p215-o1 form').attr('id', 'formwpcf7-f2-p215-o1 form') // Give Request Legal Services form id for plugin
+        
+        // Inputs
+        
+        $('#wpcf7-f1-p215-o1 form').validate(); // Request Legal Services Form validation
         
     });
 
