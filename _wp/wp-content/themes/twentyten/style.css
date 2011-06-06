@@ -212,7 +212,7 @@ body { }
 
 #nav a { 
     display: block;
-    padding: .3em .7em;
+    padding: 3px 11px;
     font: 1em 'Open Sans Condensed';
     text-decoration: none; }
 #nav a:hover { }
