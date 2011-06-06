@@ -246,13 +246,8 @@ function twentyten_setup() {
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
         'dummy1' => array(
-            'url' => 'http://dummyimage.com/960x250/ccc/fff.png',
-            'thumbnail_url' => 'http://dummyimage.com/50x50/ccc/fff.png',
-            'description' => __( 'dummy', 'twentyten' )
-        ),
-        'dummy2' => array(
-            'url' => 'http://dummyimage.com/960x250/000/fff.png',
-            'thumbnail_url' => 'http://dummyimage.com/50x50/000/fff.png',
+            'url' => 'http://dummyimage.com/960x250/6c89b3/fff.png&text=+',
+            'thumbnail_url' => 'http://dummyimage.com/50x50/6c89b3/fff.png&text=+',
             'description' => __( 'dummy', 'twentyten' )
         )
       )
@@ -705,9 +700,9 @@ function load_js() {
     $script('<?php bloginfo( 'stylesheet_directory' ); ?>/_js/global.js', 'global');
     
     // WP stuff
-    $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/l10n.js?ver=20101110', 'l10n');
+    $script('<?php echo get_bloginfo( 'wpurl' ); ?>/wp-includes/js/l10n.js?ver=20101110', 'l10n');
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) : ?>
-    $script('http://<?php echo bloginfo( 'domain' ); ?>/_wp/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
+    $script('<?php echo get_bloginfo( 'wpurl' ); ?>/wp-includes/js/comment-reply.js?ver=20090102', 'comment-reply');
     <?php endif; ?>
 
 </script>

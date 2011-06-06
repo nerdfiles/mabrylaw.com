@@ -11,7 +11,19 @@ $script.ready('jquery', function() {
 // domready
 
     $(document).ready(function() {
+        
+        // Set active page 
+        
+        $("a[title='"+$.trim($('h1').text())+"']").each(function() {
+            
+            $(this).addClass('current-page').parent().addClass('current-page-container');
+        });
+        
+        // Set focus to search
+        
         $('input[name="s"]').focus();
+        
+        // Init 
         
         $('input[name="s"]').attr('tabindex', '1');
         $('#skip-language-switcher').attr('tabindex', '2');
@@ -19,6 +31,8 @@ $script.ready('jquery', function() {
         $('#skip-search').attr('tabindex', '4');
         $('#skip-primary').attr('tabindex', '5');
         $('#logo').attr('tabindex', '6');
+        
+        // Config main navigation
         
         //$('#nav li').addClass('originize');
         $('#nav ul li ul').addClass('hide');
@@ -30,6 +44,8 @@ $script.ready('jquery', function() {
             $(this).removeClass('hover');
             $(this).find('ul').addClass('hide').removeClass('show-sub-menu');
         });
+        
+        // Set placeholder for modern browsers
         
         $('#s').attr('placeholder', 'What would you like to find?');
         

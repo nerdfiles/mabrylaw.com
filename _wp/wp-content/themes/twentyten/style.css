@@ -91,9 +91,6 @@ body.blog { }
 body.blog h1 { }
 body.blog h2 { }
 body.blog h3 { }
-
-#carousel { font-family: 'Cardo', serif; line-height: 1; }
-#carousel h2 { color: #fff; font-family: 'Oswald', 'Rockwell', arial, sans-serif; line-height: 1; }
     
 /**
  * Utils
@@ -374,7 +371,8 @@ div.post { margin: 0 0 20px 0; }
 /* Section Pages */
 
 #primary li.type-page { }
-#primary li.type-page a { display: block; padding: 0 .5em .3em 0; color: #174b87; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
+#primary li.type-page a { opacity: .6; display: block; padding: 0 .5em .3em 0; color: #174b87; font: 14px 'Open Sans', Helvetica, Arial, sans-serif; font-weight: 600; }
+#primary li.type-page a:hover { opacity: 1; }
         
 /* Team */
 
@@ -418,6 +416,9 @@ dl.contact-info .region { }
 dl.contact-info .postal-code { }
 dl.contact-info .email { border-bottom: none; }
 
+#primary .current-page-container { }
+#primary a.current-page { opacity: 1 !important; }
+
 
 /**
  * Footer
@@ -442,6 +443,8 @@ dl.contact-info .email { border-bottom: none; }
  * Carousel
  */
 
+#carousel { font-family: 'Cardo', serif; line-height: 1; z-index: 9001; }
+#carousel h2 { color: #fff; font-family: 'Oswald', 'Rockwell', arial, sans-serif; line-height: 1; }
 #carousel { margin: 0 0 20px 0; width: 960px; height: 250px; }
 #carousel ul { margin: 0; height: 250px; list-style: none; }
 #carousel li { height: 250px; width: 940px; }
