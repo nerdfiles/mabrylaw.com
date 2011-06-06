@@ -2,6 +2,8 @@
 AddHandler application/x-httpd-php5 .php
 AddHandler application/x-httpd-php .css
 
+# file sizes
+
 # protect the htaccess file
 <files .htaccess>
 order allow,deny
@@ -12,7 +14,7 @@ deny from all
 ServerSignature Off
 
 # limit file uploads to 10mb
-LimitRequestBody 10240000
+# LimitRequestBody 10240000
 
 # protect wpconfig.php
 <files _wp/wp-config.php>

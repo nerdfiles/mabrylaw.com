@@ -27,7 +27,6 @@ Tags: blue, white, two-columns, fixed-width, custom-header, threaded-comments, s
 ::selection {
     background: #6c89b3;
     color: #fff;
-    text-shadow: 0 0 2px #222;
 }
 
 /** Copy and Forms Defaults */
