@@ -24,7 +24,7 @@
  */
     
 -->
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js <?php echo get_bloginfo('language'); ?>" <?php language_attributes(); ?>>
     
 <head>
     
@@ -129,10 +129,30 @@ if ( $paged >= 2 || $page >= 2 )
 	    
 	    <div id="language-switcher" class="columns-4 propel-8 begin">
 	        <!-- Weavely -->
+	        <span class="accessibly-hide">Language:</span>
+            <?php 
+                $lang_url = $_SERVER['REQUEST_URI'];
+                $en_url = str_replace('/dev/', '/dev/en/', $lang_url);
+                $es_url = str_replace('/dev/', '/dev/es/', $lang_url);
+                $vi_url = str_replace('/dev/', '/dev/vi/', $lang_url);
+            ?>
             <ul>
-                <li><a href="?lang=en" title="English" id="lang-eng">Toggle</a></li>
-                <li><a href="?lang=ch" title="Chuy&eacute;n" id="lang-chu">Chuy&eacute;n</a></li>
-                <li><a href="?lang=es" title="Spanish" id="lang-esp">Cambiar</a></li>
+                <li><a href="<?php echo $en_url; ?>" title="Toggle" id="lang-eng">Toggle</a></li>
+                <li>
+                    <?php if (current_user_can('create_users')) : ?>
+                        <a href="<?php echo $vi_url; ?>" title="Chuy&eacute;n" id="lang-chu">Chuy&eacute;n</a>
+                    <?php else : ?>
+                        <span title="Chuy&eacute;n" id="lang-chu">Chuy&eacute;n</span>
+                    <?php endif; ?>
+                </li>
+                <li>
+                    <?php if (current_user_can('create_users')) : ?>
+                        <a href="<?php echo $es_url; ?>" title="Cambiar" id="lang-esp">Cambiar</a>
+                    <?php else : ?>
+                        <span title="Cambiar" id="lang-esp">Cambiar</span>
+                    <?php endif; ?>
+                    
+                </li>
             </ul>
         </div><!-- #language-switcher -->
         

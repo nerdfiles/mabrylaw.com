@@ -67,14 +67,14 @@ add_action('init', 'register_rc', 1); // Set priority to avoid plugin conflicts
 
 function register_rc() { // A unique name for our function
     $labels = array( // Used in the WordPress admin
-        'name' => _x('Team', 'post type general name'),
-        'singular_name' => _x('Team', 'post type singular name'),
-        'add_new' => _x('Add New Contributor', 'Team'),
-        'add_new_item' => __('Add New Team Contributor'),
-        'edit_item' => __('Edit Team Contributor'),
-        'new_item' => __('New Team Contributor'),
-        'view_item' => __('View Team Contributor'),
-        'search_items' => __('Search Team Contributors'),
+        'name' => _x('People', 'post type general name'),
+        'singular_name' => _x('People', 'post type singular name'),
+        'add_new' => _x('Add New Contributor', 'People'),
+        'add_new_item' => __('Add New Contributor'),
+        'edit_item' => __('Edit Contributor'),
+        'new_item' => __('New Contributor'),
+        'view_item' => __('View Contributor'),
+        'search_items' => __('Search Contributors'),
         'not_found' =>  __('No contributor listed under that name.'),
         'not_found_in_trash' => __('No contributor listed under that name.')
     );
@@ -83,11 +83,11 @@ function register_rc() { // A unique name for our function
         'public' => true, // Make it publicly accessible
         'hierarchical' => true, // No parents and children here
         'menu_position' => 5, // Appear right below "Posts"
-        'has_archive' => 'team', // Activate the archive
+        'has_archive' => 'people', // Activate the archive
         'supports' => array('title','editor','thumbnail','custom-fields','revisions','page-attributes', 'excerpt'),
         'description' => 'The contributors of Mabry Law Firm.'
     );
-    register_post_type( 'team', $args ); // Create the post type, use options above
+    register_post_type( 'people', $args ); // Create the post type, use options above
 }
 
 
@@ -108,7 +108,7 @@ $labels_project = array(
 
 register_taxonomy(
 'projects', // The name of the custom taxonomy
-array( 'team' ), // Associate it with our custom post type
+array( 'people' ), // Associate it with our custom post type
 array(
     'rewrite' => array( // Use "presenter" instead of "presenters" in the permalink
         'slug' => 'project'
@@ -749,15 +749,15 @@ function custom_page_header() {
     if ( $post_type == 'page' ) {
         $titleText = $titleText;
         $titleUrl = '.';
-    } else if ( $post_type == 'team' ) {
-        $titleText = "team";
-        $titleUrl = $url . "/team/";
+    } else if ( $post_type == 'people' ) {
+        $titleText = "people";
+        $titleUrl = $url . "/people/";
     } else if ( $post_type == 'post' ) {
         $titleText = "news";
         $titleUrl = $url . "/news/";
     }
     
-    if ( !(is_front_page()) ) :
+    if ( is_single() || is_page() || is_archive() ) :
 ?>
     <h1 class="page-title">
         <a href="<?php echo $titleUrl; ?>"><?php echo $titleText; ?></a>
@@ -765,7 +765,13 @@ function custom_page_header() {
     
     <?php
     
-    endif;
+    elseif ( is_search() ) : ?>
+    
+    <h1 class="page-title">
+        <span><?php printf( __( 'Search Results for: %s', 'twentyten' ), get_search_query() ); ?></span>
+    </h1>
+    
+    <?php endif;
 }
 
 //add_filter("the_excerpt", "fancified_the_excerpt");

@@ -51,17 +51,21 @@ $script.ready('jquery', function() {
         
         // Set active page 
         
-        $("a[title='"+$.trim($('h1').text())+"']").each(function() {
-            
-            //$(this).addClass('current-page').parent().addClass('current-page-container');
-            
-            $(this).animate({
-                opacity: .5
-            }, 100).delay(50).animate({
-                opacity: 1
-            }, 200);
-            
-        });
+        if ( !$('body.home').length ) {
+        
+            $("a[title='"+$.trim($('h1').text())+"']").each(function() {
+                
+                //$(this).addClass('current-page').parent().addClass('current-page-container');
+                
+                $(this).animate({
+                    opacity: .5
+                }, 100).delay(50).animate({
+                    opacity: 1
+                }, 200);
+                
+            });
+        
+        }
         
         // Clean up
         
@@ -101,11 +105,15 @@ $script.ready('jquery', function() {
         $('#nav ul li ul').addClass('hide');
         $('#menu-main-navigation').addClass('clearfix');
         $('#nav ul li').hover(function() {
-            $(this).addClass('hover');
-            $(this).find('ul').removeClass('hide').addClass('show-sub-menu');
+            var $self = $(this);
+            $self.addClass('hover');
+            $self.find('ul').removeClass('hide').addClass('show-sub-menu');
+            $self.closest('li').addClass('hover');
         }, function() {
-            $(this).removeClass('hover');
-            $(this).find('ul').addClass('hide').removeClass('show-sub-menu');
+            var $self = $(this);
+            $self.removeClass('hover');
+            $self.find('ul').addClass('hide').removeClass('show-sub-menu');
+            $self.closest('li').removeClass('hover');
         });
         
         // Set placeholder for modern browsers

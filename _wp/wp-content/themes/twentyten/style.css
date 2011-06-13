@@ -131,7 +131,8 @@ body { }
     }
     */
         
-    #language-switcher a { 
+    #language-switcher a,
+    #language-switcher span { 
         opacity: .7; 
         color: #777; 
         text-decoration: none; 
@@ -206,32 +207,42 @@ body { }
     list-style: none;
     margin: 0; }
 
-#nav li { float: left; } /* huzzah: since the text isn't around... */
+#nav li { margin-left: 10px; background: #fff; float: left; } /* huzzah: since the text isn't around... */
 
-#nav li li { clear: left; }
+#nav li li { clear: left; margin-left: 0; }
 
 #nav a { 
     display: block;
     padding: 3px 11px;
-    font: 1em 'Open Sans Condensed';
-    text-decoration: none; }
-#nav a:hover { }
+    font: 14px 'Open Sans';
+    text-decoration: none;
+    color: #00457e; }
+#nav a:hover { background: #00457e; color: #fff; }
+
+#nav li.current_page_item a { background: #00457e; color: #fff; }
+#nav li.current_page_parent a { background: #00457e; color: #fff; }
+
+#nav li.hover a { }
     
-#nav li li a { 
-    }
+#nav li.menu-item li a { background: #fff; color: #00457e; font-size: 12px; }
+#nav li.menu-item li a:hover { color: #00457e; background: #fff; }
 
 #nav ul li ul { 
     z-index: 9001;
     position: absolute; 
     left: -9999px;
     background: #fff;
-    padding: 5px 0; }
+    padding: 0; }
+    
+#nav ul li ul li ul { display: none; width: 150px; margin-left: 20px; }
 
-#nav ul li:hover ul { display: block; }
+#nav ul li:hover > ul { display: block; }
 
-#nav ul li.hover ul { display: block; }
+#nav ul li.hover > ul { display: block; }
 
 #nav ul.show-sub-menu { left: auto; }
+
+#nav li li li a { font-size: 12px; }
 
 /**
  * Wide Header
@@ -260,6 +271,7 @@ body { }
 
 body.home #wide-header-bar { height: 250px; }
 body.home #graphic { background: none; }
+body.home .entry-content p::first-letter { font-size: 2em; float: left; margin: -.1em .1em 0 0; }
 
 /**
  * Page Title
@@ -277,7 +289,8 @@ body.home #graphic { background: none; }
     top: 0px\0/;
     text-transform: uppercase; }
     
-.page-title a {
+.page-title a,
+.page-title span {
     position: absolute;
     bottom: -2px;
     /*filter: progid:DXImageTransform.Microsoft.gradient(gradientype=0,startColorstr='#60ff0000', endColorstr='#60ff0000');*/
