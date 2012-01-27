@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+/**
+ * GDGS Bounds
+ * 
+ * ...
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-core
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+
+/**
+ * Bounds Controls (Micro-level)
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+ 
+    /**
+     * Bulwark Bastions Bellowed Bastardly Bison 
+     */
+    
+    .bulwark-1 { padding: 5px; }
+    .bulwark-2 { padding: 10px; }
+    .bulwark-3 { padding: 15px; }
+    .bulwark-4 { padding: 20px; }
+    .bulwark-5 { padding: 25px; }
+    
+    
+    /**
+     * Shouldering Our Adjacent Cousins 
+     */
+    
+    .shoulder-1 { padding: 0 5px; }
+    .shoulder-2 { padding: 0 10px; }
+    .shoulder-3 { padding: 0 15px; }
+    .shoulder-4 { padding: 0 20px; }
+    .shoulder-5 { padding: 0 25px; }
+ 
+
+/**
+ * Bulwarking
+ *
+ * USAGE:
+ * Usually put on .begin, instead of .columns-X, and on elements direct descendants to a .bulwark
+ * "element.columns-X.end" may look odd, when nested under a .bulwark, but it works.
+ * 
+ * @section:        modules
+ * @subsection      support
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+/**
+ * Bulwark 1
+ */
+
+    .bulwark-1 .bulwark-1-columns-1 { width: 35px; }
+    .bulwark-1 .bulwark-1-columns-2 { width: 95px; }
+    .bulwark-1 .bulwark-1-columns-3 { width: 155px; }
+    .bulwark-1 .bulwark-1-columns-4 { width: 215px; }
+    .bulwark-1 .bulwark-1-columns-5 { width: 275px; }
+    .bulwark-1 .bulwark-1-columns-6 { width: 335px; }
+    .bulwark-1 .bulwark-1-columns-7 { width: 395px; }
+    .bulwark-1 .bulwark-1-columns-8 { width: 455px; }
+    .bulwark-1 .bulwark-1-columns-9 { width: 515px; }
+    .bulwark-1 .bulwark-1-columns-10 { width: 575px; }
+    .bulwark-1 .bulwark-1-columns-11 { width: 635px; }
+    .bulwark-1 .bulwark-1-columns-12 { width: 695px; }
+    .bulwark-1 .bulwark-1-columns-13 { width: 755px; }
+    .bulwark-1 .bulwark-1-columns-14 { width: 815px; }
+    .bulwark-1 .bulwark-1-columns-15 { width: 875px; }
+    .bulwark-1 .bulwark-1-columns-16 { width: 935px; }
+    
+/**
+ * Bulwark 2
+ */
+    
+    .bulwark-2 .bulwark-2-columns-1 { width: 30px; }
+    .bulwark-2 .bulwark-2-columns-2 { width: 90px; }
+    .bulwark-2 .bulwark-2-columns-3 { width: 150px; }
+    .bulwark-2 .bulwark-2-columns-4 { width: 210px; }
+    .bulwark-2 .bulwark-2-columns-5 { width: 270px; }
+    .bulwark-2 .bulwark-2-columns-6 { width: 330px; }
+    .bulwark-2 .bulwark-2-columns-7 { width: 390px; }
+    .bulwark-2 .bulwark-2-columns-8 { width: 450px; }
+    .bulwark-2 .bulwark-2-columns-9 { width: 510px; }
+    .bulwark-2 .bulwark-2-columns-10 { width: 570px; }
+    .bulwark-2 .bulwark-2-columns-11 { width: 630px; }
+    .bulwark-2 .bulwark-2-columns-12 { width: 690px; }
+    .bulwark-2 .bulwark-2-columns-13 { width: 750px; }
+    .bulwark-2 .bulwark-2-columns-14 { width: 810px; }
+    .bulwark-2 .bulwark-2-columns-15 { width: 870px; }
+    .bulwark-2 .bulwark-2-columns-16 { width: 930px; }
+    
+/**
+ * Bulwark 3
+ */
+    
+    .bulwark-3 .bulwark-3-columns-1 { width: 25px; }
+    .bulwark-3 .bulwark-3-columns-2 { width: 85px; }
+    .bulwark-3 .bulwark-3-columns-3 { width: 145px; }
+    .bulwark-3 .bulwark-3-columns-4 { width: 205px; }
+    .bulwark-3 .bulwark-3-columns-5 { width: 265px; }
+    .bulwark-3 .bulwark-3-columns-6 { width: 325px; }
+    .bulwark-3 .bulwark-3-columns-7 { width: 385px; }
+    .bulwark-3 .bulwark-3-columns-8 { width: 445px; }
+    .bulwark-3 .bulwark-3-columns-9 { width: 505px; }
+    .bulwark-3 .bulwark-3-columns-10 { width: 565px; }
+    .bulwark-3 .bulwark-3-columns-11 { width: 625px; }
+    .bulwark-3 .bulwark-3-columns-12 { width: 685px; }
+    .bulwark-3 .bulwark-3-columns-13 { width: 745px; }
+    .bulwark-3 .bulwark-3-columns-14 { width: 805px; }
+    .bulwark-3 .bulwark-3-columns-15 { width: 865px; }
+    .bulwark-3 .bulwark-3-columns-16 { width: 925px; }
+
+
+/**
+ * Shouldering
+ *
+ * USAGE:
+ * Usually put on .begin, instead of .columns-X, and on elements direct descendants to a .shoulder
+ * "element.columns-X.end" may look odd, when nested under a .shoulder, but it works.
+ * 
+ * @section:        modules
+ * @subsection      support
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+/**
+ * Shoulder 1
+ */
+    
+    .shoulder-1 .shoulder-1-columns-1 { width: 35px; }
+    .shoulder-1 .shoulder-1-columns-2 { width: 95px; }
+    .shoulder-1 .shoulder-1-columns-3 { width: 155px; }
+    .shoulder-1 .shoulder-1-columns-4 { width: 215px; }
+    .shoulder-1 .shoulder-1-columns-5 { width: 275px; }
+    .shoulder-1 .shoulder-1-columns-6 { width: 335px; }
+    .shoulder-1 .shoulder-1-columns-7 { width: 395px; }
+    .shoulder-1 .shoulder-1-columns-8 { width: 455px; }
+    .shoulder-1 .shoulder-1-columns-9 { width: 515px; }
+    .shoulder-1 .shoulder-1-columns-10 { width: 575px; }
+    .shoulder-1 .shoulder-1-columns-11 { width: 635px; }
+    .shoulder-1 .shoulder-1-columns-12 { width: 695px; }
+    .shoulder-1 .shoulder-1-columns-13 { width: 755px; }
+    .shoulder-1 .shoulder-1-columns-14 { width: 815px; }
+    .shoulder-1 .shoulder-1-columns-15 { width: 875px; }
+    .shoulder-1 .shoulder-1-columns-16 { width: 935px; }
+    
+/**
+ * Shoulder 2
+ */
+    
+    .shoulder-2 .shoulder-2-columns-1 { width: 30px; }
+    .shoulder-2 .shoulder-2-columns-2 { width: 90px; }
+    .shoulder-2 .shoulder-2-columns-3 { width: 150px; }
+    .shoulder-2 .shoulder-2-columns-4 { width: 210px; }
+    .shoulder-2 .shoulder-2-columns-5 { width: 270px; }
+    .shoulder-2 .shoulder-2-columns-6 { width: 330px; }
+    .shoulder-2 .shoulder-2-columns-7 { width: 390px; }
+    .shoulder-2 .shoulder-2-columns-8 { width: 450px; }
+    .shoulder-2 .shoulder-2-columns-9 { width: 510px; }
+    .shoulder-2 .shoulder-2-columns-10 { width: 570px; }
+    .shoulder-2 .shoulder-2-columns-11 { width: 630px; }
+    .shoulder-2 .shoulder-2-columns-12 { width: 690px; }
+    .shoulder-2 .shoulder-2-columns-13 { width: 750px; }
+    .shoulder-2 .shoulder-2-columns-14 { width: 810px; }
+    .shoulder-2 .shoulder-2-columns-15 { width: 870px; }
+    .shoulder-2 .shoulder-2-columns-16 { width: 930px; }
+    
+/**
+ * Shoulder 3
+ */
+    
+    .shoulder-3 .shoulder-3-columns-1 { width: 25px; }
+    .shoulder-3 .shoulder-3-columns-2 { width: 85px; }
+    .shoulder-3 .shoulder-3-columns-3 { width: 145px; }
+    .shoulder-3 .shoulder-3-columns-4 { width: 205px; }
+    .shoulder-3 .shoulder-3-columns-5 { width: 265px; }
+    .shoulder-3 .shoulder-3-columns-6 { width: 325px; }
+    .shoulder-3 .shoulder-3-columns-7 { width: 385px; }
+    .shoulder-3 .shoulder-3-columns-8 { width: 445px; }
+    .shoulder-3 .shoulder-3-columns-9 { width: 505px; }
+    .shoulder-3 .shoulder-3-columns-10 { width: 565px; }
+    .shoulder-3 .shoulder-3-columns-11 { width: 625px; }
+    .shoulder-3 .shoulder-3-columns-12 { width: 685px; }
+    .shoulder-3 .shoulder-3-columns-13 { width: 745px; }
+    .shoulder-3 .shoulder-3-columns-14 { width: 805px; }
+    .shoulder-3 .shoulder-3-columns-15 { width: 865px; }
+    .shoulder-3 .shoulder-3-columns-16 { width: 925px; }
+
+/* End of _modules/bounds.css */

@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+/**
+ * GDGS Form
+ * 
+ * Form, like Table, should be optional and an extension.
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+
+/**
+ * Bulwarking Forms 
+ *
+ * e.g., .bulwark-1, .bulwark-2, and so on...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    .column-layout .bulwark-1 input.bulwark-1-columns-1 { width: 35px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-2 { width: 95px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-3 { width: 155px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-4 { width: 215px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-5 { width: 275px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-6 { width: 335px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-7 { width: 395px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-8 { width: 455px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-9 { width: 515px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-10 { width: 575px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-11 { width: 635px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-12 { width: 695px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-13 { width: 755px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-14 { width: 815px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-15 { width: 875px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-16 { width: 935px; }
+
+    .column-layout .bulwark-1 input.bulwark-1-columns-1-style-1 { width: 23px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-2-style-1 { width: 83px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-3-style-1 { width: 143px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-4-style-1 { width: 203px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-5-style-1 { width: 263px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-6-style-1 { width: 323px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-7-style-1 { width: 383px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-8-style-1 { width: 443px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-9-style-1 { width: 503px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-10-style-1 { width: 563px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-11-style-1 { width: 623px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-12-style-1 { width: 683px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-13-style-1 { width: 743px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-14-style-1 { width: 803px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-15-style-1 { width: 863px; }
+    .column-layout .bulwark-1 input.bulwark-1-columns-16-style-1 { width: 923px; }
+    
+
+/**
+ * Form Field Widths
+ *
+ * e.g., input.columns-1-style-1, input.columns-1-style-2, and so on...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .column-layout input.columns-1-style-1 { width: 28px; }
+    .column-layout input.columns-2-style-1 { width: 88px; }
+    .column-layout input.columns-3-style-1 { width: 148px; }
+    .column-layout input.columns-4-style-1 { width: 208px; }
+    .column-layout input.columns-5-style-1 { width: 268px; }
+    .column-layout input.columns-6-style-1 { width: 328px; }
+    .column-layout input.columns-7-style-1 { width: 388px; }
+    .column-layout input.columns-8-style-1 { width: 448px; }
+    .column-layout input.columns-9-style-1 { width: 508px; }
+    .column-layout input.columns-10-style-1 { width: 568px; }
+    .column-layout input.columns-11-style-1 { width: 628px; }
+    .column-layout input.columns-12-style-1 { width: 688px; }
+    .column-layout input.columns-13-style-1 { width: 748px; }
+    .column-layout input.columns-14-style-1 { width: 808px; }
+    .column-layout input.columns-15-style-1 { width: 868px; }
+    .column-layout input.columns-16-style-1 { width: 928px; }
+    
+
+/**
+ * Form Field Vertical Position
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+    
+    .column-layout label.columns-1 { position: relative; top: -4px; }
+    .column-layout label.columns-2 { position: relative; top: -4px; }
+    .column-layout label.columns-3 { position: relative; top: -4px; }
+    .column-layout label.columns-4 { position: relative; top: -4px; }
+    .column-layout label.columns-5 { position: relative; top: -4px; }
+    .column-layout label.columns-6 { position: relative; top: -4px; }
+    .column-layout label.columns-7 { position: relative; top: -4px; }
+    .column-layout label.columns-8 { position: relative; top: -4px; }
+    .column-layout label.columns-9 { position: relative; top: -4px; }
+    .column-layout label.columns-10 { position: relative; top: -4px; }
+    .column-layout label.columns-11 { position: relative; top: -4px; }
+    .column-layout label.columns-12 { position: relative; top: -4px; }
+    .column-layout label.columns-13 { position: relative; top: -4px; }
+    .column-layout label.columns-14 { position: relative; top: -4px; }
+    .column-layout label.columns-15 { position: relative; top: -4px; }
+    .column-layout label.columns-16 { position: relative; top: -4px; }
+    
+    .column-layout dt label.columns-1 { position: relative; top: 4px; }
+    .column-layout dt label.columns-2 { position: relative; top: 4px; }
+    .column-layout dt label.columns-3 { position: relative; top: 4px; }
+    .column-layout dt label.columns-4 { position: relative; top: 4px; }
+    .column-layout dt label.columns-5 { position: relative; top: 4px; }
+    .column-layout dt label.columns-6 { position: relative; top: 4px; }
+    .column-layout dt label.columns-7 { position: relative; top: 4px; }
+    .column-layout dt label.columns-8 { position: relative; top: 4px; }
+    .column-layout dt label.columns-9 { position: relative; top: 4px; }
+    .column-layout dt label.columns-10 { position: relative; top: 4px; }
+    .column-layout dt label.columns-11 { position: relative; top: 4px; }
+    .column-layout dt label.columns-12 { position: relative; top: 4px; }
+    .column-layout dt label.columns-13 { position: relative; top: 4px; }
+    .column-layout dt label.columns-14 { position: relative; top: 4px; }
+    .column-layout dt label.columns-15 { position: relative; top: 4px; }
+    .column-layout dt label.columns-16 { position: relative; top: 4px; }
+    
+/* End of _modules/form.css */

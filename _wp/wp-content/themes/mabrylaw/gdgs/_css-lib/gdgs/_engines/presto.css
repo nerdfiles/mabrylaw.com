@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/**
+ * Gecko engines
+ * 
+ * For Gecko engines
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-engines
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+ 
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+
+}
+
+/* End of _engines/presto.css */

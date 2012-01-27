@@ -1,0 +1,651 @@
+@charset "utf-8";
+
+/**
+ * GDGS Tools
+ * 
+ * ...
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+
+/**
+ * IE: hasLaytout Fix
+ *
+ * For Trident engines.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    .hasLayout { zoom: 1; }
+
+
+/**
+ * Clearfix
+ *
+ * Without additional markup.
+ * Don't you love seeing the filled in container
+ * within your DOM Inspector?
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0; }
+    * html .clearfix { zoom: 1; }               /* IE6 */
+    *:first-child+html .clearfix { zoom: 1; }   /* IE7 */
+
+
+/**
+ * Absolutize/Originize
+ *
+ * For using absolute positioning at any container
+ * within a layout.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .absolutize { 
+        position: absolute; }
+    .originize { 
+        position: relative; }
+
+
+/**
+ * Diagnostics
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         non-trident
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .expose { outline: 2px solid        #c30; }
+
+
+/**
+ * Vertical Controls (Micro-level)
+ *
+ * Macro-level vertical controls do not exist!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    /**
+     * Ascend
+     */
+    
+    .ascend-1 { top: -5px; }
+    .ascend-2 { top: -10px; }
+    .ascend-3 { top: -15px; }
+    .ascend-4 { top: -20px; }
+    .ascend-5 { top: -25px; }
+    .ascend-6 { top: -30px; }
+    .ascend-7 { top: -35px; }
+    .ascend-8 { top: -40px; }
+    .ascend-9 { top: -45px; }
+    .ascend-10 { top: -50px; }
+    
+    /**
+     * Descend 
+     */
+    
+    .descend-1 { bottom: -5px; }
+    .descend-2 { bottom: -10px; }
+    .descend-3 { bottom: -15px; }
+    .descend-4 { bottom: -20px; }
+    .descend-5 { bottom: -25px; }
+    .descend-6 { bottom: -30px; }
+    .descend-7 { bottom: -35px; }
+    .descend-8 { bottom: -40px; }
+    .descend-9 { bottom: -45px; }
+    .descend-10 { bottom: -50px; }
+
+    /**
+     * Ceiling 
+     */
+
+    .ceiling-1 { padding-top: 5px; }
+    .ceiling-2 { padding-top: 10px; }
+    .ceiling-3 { padding-top: 15px; }
+    .ceiling-4 { padding-top: 20px; }
+    .ceiling-5 { padding-top: 25px; }
+    .ceiling-6 { padding-top: 30px; }
+    .ceiling-7 { padding-top: 35px; }
+    .ceiling-8 { padding-top: 40px; }
+    .ceiling-9 { padding-top: 45px; }
+    .ceiling-10 { padding-top: 50px; }
+
+    /**
+     * Floor 
+     */
+
+    .floor-1 { padding-bottom: 5px; }
+    .floor-2 { padding-bottom: 10px; }
+    .floor-3 { padding-bottom: 15px; }
+    .floor-4 { padding-bottom: 20px; }
+    .floor-5 { padding-bottom: 25px; }
+    .floor-6 { padding-bottom: 30px; }
+    .floor-7 { padding-bottom: 35px; }
+    .floor-8 { padding-bottom: 40px; }
+    .floor-9 { padding-bottom: 45px; }
+    .floor-10 { padding-bottom: 50px; }
+    
+    /**
+     * Attic 
+     */
+
+    .attic-1 { margin-top: 5px; }
+    .attic-2 { margin-top: 10px; }
+    .attic-3 { margin-top: 15px; }
+    .attic-4 { margin-top: 20px; }
+    .attic-5 { margin-top: 25px; }
+    .attic-6 { margin-top: 30px; }
+    .attic-7 { margin-top: 35px; }
+    .attic-8 { margin-top: 40px; }
+    .attic-9 { margin-top: 45px; }
+    .attic-10 { margin-top: 50px; }
+
+    /**
+     * Basement 
+     */
+
+    .basement-1 { margin-bottom: 5px; }
+    .basement-2 { margin-bottom: 10px; }
+    .basement-3 { margin-bottom: 15px; }
+    .basement-4 { margin-bottom: 20px; }
+    .basement-5 { margin-bottom: 25px; }
+    .basement-6 { margin-bottom: 30px; }
+    .basement-7 { margin-bottom: 35px; }
+    .basement-8 { margin-bottom: 40px; }
+    .basement-9 { margin-bottom: 45px; }
+    .basement-10 { margin-bottom: 50px; }
+
+    /**
+     * Lift 
+     */
+
+    .lift-1 { margin-top: -5px; }
+    .lift-2 { margin-top: -10px; }
+    .lift-3 { margin-top: -15px; }
+    .lift-4 { margin-top: -20px; }
+    .lift-5 { margin-top: -25px; }
+    .lift-6 { margin-top: -30px; }
+    .lift-7 { margin-top: -35px; }
+    .lift-8 { margin-top: -40px; }
+    .lift-9 { margin-top: -45px; }
+    .lift-10 { margin-top: -50px; }
+    
+    /**
+     * Hoist 
+     */
+    
+    .hoist-1 { margin-bottom: -5px; }
+    .hoist-2 { margin-bottom: -10px; }
+    .hoist-3 { margin-bottom: -15px; }
+    .hoist-4 { margin-bottom: -20px; }
+    .hoist-5 { margin-bottom: -25px; }
+    .hoist-6 { margin-bottom: -30px; }
+    .hoist-7 { margin-bottom: -35px; }
+    .hoist-8 { margin-bottom: -40px; }
+    .hoist-9 { margin-bottom: -45px; }
+    .hoist-10 { margin-bottom: -50px; }
+    
+
+/**
+ * Horizontal Controls (Micro-level)
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    /**
+     * Tug: Pulling an Element [from] the Left Some 
+     */
+    
+    .tug-1 { margin-left: -5px; }
+    .tug-2 { margin-left: -10px; }
+    .tug-3 { margin-left: -15px; }
+    .tug-4 { margin-left: -20px; }
+    .tug-5 { margin-left: -25px; }
+    .tug-6 { margin-left: -30px; }
+    .tug-7 { margin-left: -35px; }
+    .tug-8 { margin-left: -40px; }
+    .tug-9 { margin-left: -45px; }
+    .tug-10 { margin-left: -50px; }
+    
+    /**
+     * Nudge: Pushing an Element [from] the Left Some 
+     */
+    
+    .nudge-1 { margin-left: 5px; }
+    .nudge-2 { margin-left: 10px; }
+    .nudge-3 { margin-left: 15px; }
+    .nudge-4 { margin-left: 20px; }
+    .nudge-5 { margin-left: 25px; }
+    .nudge-6 { margin-left: 30px; }
+    .nudge-7 { margin-left: 35px; }
+    .nudge-8 { margin-left: 40px; }
+    .nudge-9 { margin-left: 45px; }
+    .nudge-10 { margin-left: 50px; }
+    
+    /**
+     * Shove: Element Pushing Right Some 
+     */
+    
+    .shove-1 { margin-right: 5px; }
+    .shove-2 { margin-right: 10px; }
+    .shove-3 { margin-right: 15px; }
+    .shove-4 { margin-right: 20px; }
+    .shove-5 { margin-right: 25px; }
+    .shove-6 { margin-right: 30px; }
+    .shove-7 { margin-right: 35px; }
+    .shove-8 { margin-right: 40px; }
+    .shove-9 { margin-right: 45px; }
+    .shove-10 { margin-right: 50px; }
+
+    /**
+     * Tow: Pulling an Element [from] the Right Some 
+     */
+    
+    .tow-1 { margin-right: -5px; }
+    .tow-2 { margin-right: -10px; }
+    .tow-3 { margin-right: -15px; }
+    .tow-4 { margin-right: -20px; }
+    .tow-5 { margin-right: -25px; }
+    .tow-6 { margin-right: -30px; }
+    .tow-7 { margin-right: -35px; }
+    .tow-8 { margin-right: -40px; }
+    .tow-9 { margin-right: -45px; }
+    .tow-10 { margin-right: -50px; }
+
+
+/**
+ * Alignment
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    /**
+     * Image alignment. 
+     */
+    
+    img.align-right { 
+        float: right; 
+        margin: 0 0 0 1em; }
+    img.align-left { 
+        float: left; 
+        margin: 0 1em 0 0; }
+    img.align-center { 
+        display: block; 
+        margin: 0 auto; }
+        
+    /**
+     * Text alignment. 
+     */
+    
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .text-justify { text-align: justify; }
+    .text-center { text-align: center; }
+        
+    /**
+     * Vertical Inline Alignment. 
+     */
+    
+    .align-baseline { vertical-align: baseline; }
+    .align-top { vertical-align: top; }
+    .align-middle { vertical-align: middle; }
+    .align-bottom { vertical-align: bottom; }
+    .align-text-top { vertical-align: text-top; }
+    .align-text-bottom { vertical-align: text-bottom; }
+
+
+/**
+ * Floats
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    .float-left { float: left; }
+    .float-right { float: right; }
+
+
+/**
+ * GTFO Classes
+ *
+ * Motivation: Don't write more CSS to nullify inheritance. Arguable?
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    .no-margin { margin: 0; }
+    .no-margin-top { margin-top: 0; }
+    .no-margin-right { margin-right: 0; }
+    .no-margin-bottom { margin-bottom: 0; }
+    .no-margin-left { margin-left: 0; }
+
+    
+    .no-padding { padding: 0; }
+    .no-padding-top { padding-top: 0; }
+    .no-padding-right { padding-right: 0; }
+    .no-padding-bottom { padding-bottom: 0; }
+    .no-padding-left { padding-left: 0; }
+
+
+/**
+ * Inline (Lists)
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    .inline,
+    .inline { display: inline; }
+    .inline,
+    .inline { margin: 0; }
+    .inline li,
+    .inline li {
+        display: inline;
+        margin: 0; }
+
+
+/**
+ * Sidebar Copy Distillers
+ *
+ * Motivation: For containers' with unpredictable markup.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+   
+    /**
+     * Across the board
+     */
+      
+    .distill p,
+    .distill ul,
+    .distill ol,
+    .distill dl { margin: 0; }
+    
+    /**
+     * By element type
+     */
+     
+    .distill-p p,
+    .distill-ul ul,
+    .distill-ol ol,
+    .distill-dl dl { margin: 0; }
+
+
+/**
+ * Ad Hoc Text Sizing
+ *
+ * Motivation: ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+    
+    .text-large { font-size: 20px; }
+    .text-jumbo { font-size: 18px; }
+    .text-big { font-size: 14px; }
+    .text-default { font-size: 12px; }
+    .text-small { font-size: 10px; }
+    .text-tiny { font-size: 9px; }
+
+
+/**
+ * Clearing
+ *
+ * Motivation: ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+ 
+    .clear-all { clear: both; }
+    .clear-left { clear: left; }
+    .clear-right { clear: right; }
+
+/* End of _modules/tools.css */
+

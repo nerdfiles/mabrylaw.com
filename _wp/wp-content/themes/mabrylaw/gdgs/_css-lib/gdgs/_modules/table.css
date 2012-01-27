@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+/**
+ * GDGS Table
+ * 
+ * table-layout: fixed gives inconsistent renderings
+ * across various browsers. Either drop table.css or
+ * drop table-layout: fixed. Don't use both. Or just
+ * hack it up.
+ * 
+ * Do not use 16-column tables. Buggy in Trident browsers.
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+/**
+ * Table Layout
+ *
+ * Set table-layout to auto !important. GDGS assumes this.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    table { table-layout: auto !important; }
+    
+    
+/**
+ * Table columns
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+    
+    .column-layout col.columns-1,
+    .column-layout col.columns-2,
+    .column-layout col.columns-3,
+    .column-layout col.columns-4,
+    .column-layout col.columns-5,
+    .column-layout col.columns-6,
+    .column-layout col.columns-7,
+    .column-layout col.columns-8,
+    .column-layout col.columns-9,
+    .column-layout col.columns-10,
+    .column-layout col.columns-11,
+    .column-layout col.columns-12,
+    .column-layout col.columns-13,
+    .column-layout col.columns-14,
+    .column-layout col.columns-15,
+    .column-layout col.columns-16 { 
+        display: table-column; 
+        float: none; }
+     
+     
+/**
+ * Table column widths
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+    
+    .column-layout col.columns-1 { width: 60px; }
+    .column-layout col.columns-2 { width: 120px; }
+    .column-layout col.columns-3 { width: 180px; }
+    .column-layout col.columns-4 { width: 240px; }
+    .column-layout col.columns-5 { width: 300px; }
+    .column-layout col.columns-6 { width: 360px; }
+    .column-layout col.columns-7 { width: 420px; }
+    .column-layout col.columns-8 { width: 480px; }
+    .column-layout col.columns-9 { width: 540px; }
+    .column-layout col.columns-10 { width: 600px; }
+    .column-layout col.columns-11 { width: 660px; }
+    .column-layout col.columns-12 { width: 720px; }
+    .column-layout col.columns-13 { width: 780px; }
+    .column-layout col.columns-14 { width: 840px; }
+    .column-layout col.columns-15 { width: 900px; }
+    .column-layout col.columns-16 { width: 960px; }
+
+ 
+/**
+ * Last table column
+ *
+ * Ad hoc table column width fix
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround      ie6, ie7, ie8
+ * @tested          ie6, ie7, ie8
+ * @valid           true
+ */
+ 
+    .column-layout col.columns-1.end { width: 40px; }
+    .column-layout col.columns-2.end { width: 100px; }
+    .column-layout col.columns-3.end { width: 160px; }
+    .column-layout col.columns-4.end { width: 220px; }
+    .column-layout col.columns-5.end { width: 280px; }
+    .column-layout col.columns-6.end { width: 340px; }
+    .column-layout col.columns-7.end { width: 400px; }
+    .column-layout col.columns-8.end { width: 460px; }
+    .column-layout col.columns-9.end { width: 520px; }
+    .column-layout col.columns-10.end { width: 580px; }
+    .column-layout col.columns-11.end { width: 640px; }
+    .column-layout col.columns-12.end { width: 720px; }
+    .column-layout col.columns-13.end { width: 760px; }
+    .column-layout col.columns-14.end { width: 820px; }
+    .column-layout col.columns-15.end { width: 880px; }
+    .column-layout col.columns-16.end { width: 940px; }
+
+/* End _module/table.css */

@@ -1,0 +1,1 @@
+[24-May-2011 00:57:06] PHP Fatal error:  Call to undefined function  get_header() in /home/mabrylaw/public_html/_wp/wp-content/themes/twentyten/index.php on line 16

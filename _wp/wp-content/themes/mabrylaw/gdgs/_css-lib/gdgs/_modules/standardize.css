@@ -1,0 +1,883 @@
+@charset "utf-8";
+
+/**
+ * GDGS Standardize
+ * 
+ * Consider for Web projects.
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ *
+ * @style           Framework & grid system
+ * @colordef        #000000; Black
+ * @colordef        #ffffff; White
+ * @fontdef         helvetica, arial, sans-serif
+ */
+ 
+
+/**
+ * Color Palette
+ *
+ * Standardize your colors!
+ * Codify @style and @colordefs here. Possibly redundant. 
+ * Consider: http://colorschemedesigner.com/
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    .text-primary-color { 
+        color:                          #000; }
+    .text-secondary-color { 
+        color:                          #000; } 
+    .text-tertiary-color { 
+        color:                          #000; } 
+    .text-quaternary-color { 
+        color:                          #000; } 
+    .text-quinary-color { 
+        color:                          #000; } 
+
+
+/**
+ * HTML and Document Body Elements
+ *
+ * Standardize your body.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    /**
+     * HTML
+     */
+     
+    html { }
+    html.no-js { }
+    html.js-enabled { }
+    
+    /**
+     * Body
+     */
+     
+    body { 
+        background:                     #fff; }
+    body.page-1 { }
+    body.category-1 { }
+    body.post-1 { }
+    body.search { }
+
+
+/**
+ * Line Breaks
+ *
+ * Standardize your line-breaks.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    br { 
+        clear: left; }
+    
+    
+/**
+ * Skip Links
+ *
+ * Skip Links are a standard, but there is no standard approach to them.
+ * Define yours!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    div#skip-links { 
+        position: absolute; 
+        left: -9999px; }
+
+
+/**
+ * Tables
+ *
+ * Standardize your tables, zebras, etc.
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+
+    /**
+     * All Tables
+     */
+
+    table { 
+        margin: 0 0 1.5em; }    
+    tr { }
+    
+    /**
+     * Tables' Typesetting Options
+     */
+     
+    table.small { 
+        font-size: .85em; }
+    
+    /**
+     * All Headers and Cells 
+     */
+    
+    tr th { 
+        padding: 5px; }
+    tr td { 
+        vertical-align: top; 
+        padding: 5px; }
+
+    /**
+     * First and Last Header 
+     */
+    
+    th.first-child { }
+    th.last-child { }
+    
+    /**
+     * First and Last Column 
+     */
+    
+    td.first-child { }
+    td.last-child { }
+    
+    /** 
+     * First and Last Row 
+     */
+    
+    tr.first-child { }
+    tr.first-child td { }
+    tr.last-child { }
+    tr.last-child td { }
+    
+    /**
+     * Even and Odd Rows 
+     */
+    
+    tr.odd-child { }
+    tr.odd-child td { }
+    tr.even-child { }
+    tr.even-child td { }
+    
+    /**
+     * Head 
+     */
+    
+    table thead { }
+    table thead th { }
+    
+    /**
+     * Body 
+     */
+    
+    table tbody { }
+    table tbody td { }
+    
+    /**
+     * Foot 
+     */
+    
+    table tfoot { }
+    table tfoot td { }
+    
+    /**
+     * Caption 
+     */
+    
+    table caption { }
+    
+    /**
+     * Zebra Tables
+     */
+    
+    table.alt { 
+        background:                     #fff; }
+    table.alt tr { }
+    
+    /**
+     * All Headers and Cells 
+     */
+    
+    table.alt tr th { 
+        background:                     #FFAC36; 
+        border: 1px solid               #D18821; }
+    table.alt tr td {
+        border: 1px solid               #ccc; }
+    
+    /**
+     * First and Last Header 
+     */
+    
+    table.alt th.first-child { }
+    table.alt th.last-child { }
+    
+    /**
+     * First and Last Header 
+     */
+    
+    table.alt th.first-child { }
+    table.alt th.last-child { }
+    
+    /**
+     * First and Last Column 
+     */
+    
+    table.alt td.first-child { }
+    table.alt td.last-child { }
+    
+    /**
+     * First and Last Row 
+     */ 
+    
+    table.alt tr.first-child { }
+    table.alt tr.first-child td { }
+    table.alt tr.last-child { }
+    table.alt tr.last-child td { }
+    
+    /**
+     * Even and Odd Rows 
+     */
+    
+    table.alt tr.odd-child { 
+        background:                     #e1e1e1; }
+    table.alt tr.odd-child td { }
+    table.alt tr.even-child { }
+    table.alt tr.even-child td { }
+    
+    /**
+     * Head 
+     */
+    
+    table.alt thead { }
+    table.alt thead th { }
+    
+    /**
+     * Body 
+     */
+    
+    table.alt tbody { }
+    table.alt tbody td { }
+    
+    /**
+     * Foot 
+     */
+    
+    table.alt tfoot { }
+    table.alt tfoot td { 
+        border: 1px solid               #FC363F; 
+        background:                     #FF8F94; }
+    
+    /**
+     * Caption 
+     */
+    
+    table.alt caption { 
+        padding: 5px; 
+        background:                     #FFEF8F; 
+        border: 1px solid               #DEC946 ; }
+    
+
+/**
+ * Form Styleing
+ *
+ * Standardize your forms!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Check if comprehensive for HTML5.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    input,
+    textarea,
+    select { 
+        padding: 5px 0;
+        -moz-box-shadow:                #ccc 1px 1px 3px inset; 
+        -webkit-box-shadow:             #e1e1e1 1px 1px 3px inset; 
+        box-shadow: 1px 1px 3px inset   #e1e1e1; 
+        border: 0px solid               #d1d1d1; }
+        
+    input.style-1,
+    select.style-1,
+    textarea.style-1 { 
+        padding: 5px 5px; 
+        border: 1px solid               #ccc; }
+    
+    
+    input { }
+    input.text { }
+    input.checkbox { }
+    input.radio { }
+    input.file { }
+    input.password { }
+    input.button { }
+    input.submit { }
+    input.image { }
+    input.reset { }
+    
+    select { }
+    select.single { }
+    select.multiple { }
+    
+    textarea { }
+    textarea.text { }
+    
+    fieldset { }
+    legend { 
+       margin: 0 0 1em; 
+       border-bottom: 3px solid            #FFBB51; }
+    label { }
+
+
+/**
+ * Buttons
+ *
+ * Standardize your buttons! 
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Develop cross-browser approach.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .btn,
+    .btn:link { 
+        text-decoration: none; 
+        display: inline-block; 
+        *zoom: 1; 
+        *display: inline; }
+        
+    .btn:visited { }
+    .btn:hover { text-decoration: none; }
+    .btn:hover span,
+    .btn:hover input { }
+    .btn:active { text-decoration: none; }
+    .btn:active span,
+    .btn:active input { 
+        -webkit-box-shadow:             #F39631 1px 1px 3px inset; 
+        -moz-box-shadow:                #F39631 1px 1px 3px inset; 
+        box-shadow:                     #F39631 1px 1px 3px inset; }
+        
+        .btn span { 
+            text-shadow: 1px 1px 1px    #5F3A12;
+            cursor: pointer;
+            font-family: sans-serif, Helvetica, Arial;
+            display: inline-block; 
+            line-height: 1;
+            *zoom: 1; 
+            *display: inline; }
+            
+        .btn input {
+            font-size: 12px;
+            text-shadow: 1px 1px 1px    #5F3A12;
+            cursor: pointer;
+            display: inline-block; 
+            border: none; 
+            background:                 #fff; 
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none; 
+            *zoom: 1; 
+            *display: inline; }
+            
+    .btn-1 { }
+    .btn-1 span,
+    .btn-1 input {
+        background:                     #FFBB51;
+        padding: 5px 10px; 
+        border: 1px solid               #AF6F2B;
+        color:                          #fff;
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(239,143,43)), color-stop(0.5, rgb(255,172,69)), color-stop(1, rgb(255,207,97)));
+        background: -moz-linear-gradient(center bottom, rgb(239,143,43) 0%, rgb(255,172,69) 50%, rgb(255,207,97) 100%);
+        -moz-border-radius: .5em; 
+        -webkit-border-radius: .5em;
+        border-radius: .5em; }
+
+
+/**
+ * Rounded corners
+ *
+ * Standardize your rounded corners!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    /**
+     * All Around - .5em 
+     */
+    
+    .corners-1 { 
+        -moz-border-radius: .5em; 
+        -webkit-border-radius: .5em; 
+        border-radius: .5em; }
+    
+    /**
+     * Sharp Bottom Left - .5em 
+     */
+        
+    .corners-2 {
+        -webkit-border-radius: .5em;
+        -webkit-border-bottom-left-radius: 0;
+        -moz-border-radius: .5em;
+        -moz-border-radius-bottomleft: 0;
+        border-radius: .5em;
+        border-bottom-left-radius: 0; }
+        
+    /** 
+     * Tombstone - .5em 
+     */
+    
+    .corners-3 {
+        -webkit-border-top-left-radius: .5em;
+        -webkit-border-top-right-radius: .5em;
+        -moz-border-radius-topleft: .5em;
+        -moz-border-radius-topright: .5em;
+        border-top-left-radius: .5em;
+        border-top-right-radius: .5em; }
+
+
+/**
+ * Inline Styles
+ *
+ * Motivation: ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+ 
+    .blank { 
+        color:                          #999; }
+    .empty { 
+        color:                          #999; }
+    .email { 
+        border-bottom: 1px solid        #ccc; }
+    .required { 
+        color:                          #c30000; }
+    .not-required { margin-right: 9px; }
+    
+
+/**
+ * Arbitrary Widths
+ *
+ * Motivation: None; avoid these. 
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    .width-tiny { width: 2em; }
+    .width-small { width: 3em; }
+    .width-medium { width: 5em; }
+    .width-big { width: 7em; }
+    .width-large { width: 10em; }
+    .width-huge { width: 12em; }
+    .width-giant { width: 15em; }
+    .width-gigantic { width: 18em; }
+    .width-approx-full { width: 99%; }
+    .width-full { width: 100%; }
+
+    .width-postalcode { width: 6em; }
+    .width-phone { width: 9em; }
+
+
+/**
+ * Form Patterns
+ *
+ * Motivation: None; avoid these. 
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    /**
+     * Vertical Forms 
+     */
+    
+    div.form-utility-vertical { }
+    
+    .form-field-block { }
+        .field-label { }
+        .field-label label { }
+        .field-input { }
+        .field-input input { }
+        .field-input select { }
+        .field-input textarea { }
+        
+    /**
+     * Columnar Forms 
+     */
+    
+    dl.form-utility-columnar { }
+    
+    dl.form-utility-columnar 
+        dt.field-label { }
+    dl.form-utility-columnar 
+        dt.field-label label { }
+    dl.form-utility-columnar 
+        dd.field-input { }
+    dl.form-utility-columnar 
+        dd.field-input input { }
+    dl.form-utility-columnar 
+        dd.field-input select { }
+    dl.form-utility-columnar 
+        dd.field-input textarea { }
+
+
+/**
+ * Page separators
+ *
+ * Motivation: ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    hr { border: none; border-top: 1px #ccc solid; }
+    hr.page-separator { }
+    hr.page-separator-1 { }
+    hr.page-separator-2 { }
+    hr.page-separator-3 { }
+    
+
+/**
+ * Wrappers
+ *
+ * Motivation: ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    .wrapper-1 { }
+    .wrapper-2 { }
+    .wrapper-3 { }
+
+
+/**
+ * Header Wrappers
+ *
+ * Motivation: None; consider removing these. (HTML5)
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    div.header-1 { }
+    div.header-2 { }
+    div.header-3 { }
+
+
+/**
+ * Headers
+ *
+ * Standardize your headers!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Consider moving to Standardize module.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          none
+ * @valid           true
+ */
+
+    h1.header-1 { }
+    h1.header-2 { }
+    h1.header-3 { }
+    
+    h2.header-1 { }
+    h2.header-2 { }
+    h2.header-3 { }
+    
+    h3.header-1 { }
+    h3.header-2 { }
+    h3.header-3 { }
+    
+    h4.header-1 { }
+    h4.header-2 { }
+    h4.header-3 { }
+    
+    h5.header-1 { }
+    h5.header-2 { }
+    h5.header-3 { }
+    
+    h6.header-1 { }
+    h6.header-2 { }
+    h6.header-3 { }
+    
+
+/**
+ * Anchors
+ *
+ * Standardize your logic/catalogue for anchors!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    a,
+    a:link { outline: none; }
+    a:visited { }
+    a:hover { text-decoration: underline; }
+    a:active { }
+    a img { border: none }
+
+/* End of _modules/standardize.css */

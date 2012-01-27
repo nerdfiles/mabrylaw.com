@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/**
+ * GDGS Browser Importer 
+ * 
+ * This is the GDGS Browser Importer. Comment out what you don't want or need.
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-optional
+ * @subpackage      gdgs-importer
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            Isn't this sad and stupid?
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+
+/**
+ * IE6 browser
+ * 
+ * @section         import
+ * @subsection      browsers
+ */
+ 
+    @import url('../_browsers/ie6.css');
+    
+    
+/**
+ * IE7 browser
+ * 
+ * @section         import
+ * @subsection      browsers
+ */
+ 
+    @import url('../_browsers/ie7.css');
+    
+
+/**
+ * IE8 browser
+ * 
+ * @section:        import
+ * @subsection      browsers
+ */
+ 
+    @import url('../_browsers/ie8.css');
+    
+/**
+ * IE9 browser
+ * 
+ * @section:        import
+ * @subsection      browsers
+ */
+ 
+    @import url('../_browsers/ie9.css');
+    
+
+/* End of browser-importer.css */

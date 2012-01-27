@@ -1,0 +1,24 @@
+Welcome to GDGS!
+***
+
+@todo 
+    1. Cross-browser module unit testing: 
+        *. Trident engines
+            a. IE6 [ ]
+            b. IE7 [ ]
+            c. IE8 [ ]
+        *. Gecko engines [ ]
+            d. Firefox 2.x [ ]
+            e. Firefox 3.x [ ]
+            f. Firefox 4.x [ ]
+            g. Firefox 5.x [ ]
+        *. Presto engines [ ]
+            h. Opera [ ]
+            i. Opera mini [ ]
+        *. Webkit engines [ ]
+            j. Google Chrome X.x [ ]
+            k. Google Chrome X.x [ ]
+            l. Safari 3.x
+            m. Safari 4.x
+            n. Safari 5.x
+    2. 

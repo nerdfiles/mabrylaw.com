@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/**
+ * GDGS Typesetting
+ * 
+ * Typesetting...
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-core
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+
+/**
+ * Document Typesetting
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+ 
+    /**
+     * Context
+     */
+
+    body { 
+        font-size: 75%; 
+        color: #000; 
+        line-height: 1.5;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-align: left;
+        white-space: normal; }
+        
+    /**
+     * Global Typesetting
+     */
+    
+    body,
+    h1,h2,h3,h4,h5,h6,
+    p,
+    ul,ol,dl,
+    input,textarea { 
+        font-family: sans-serif, Helvetica, Arial; }
+    
+    /**
+     * Headings Typesetting
+     */
+    
+    h1,h2,h3,h4,h5,h6 { 
+        font-family: "Bergamo", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; 
+        font-weight: normal; }
+    
+    h1 { 
+        font-size: 3em; 
+        line-height: 1; 
+        margin-bottom: 0.5em; }
+    h2 { 
+        font-size: 2em; 
+        margin-bottom: 0.75em; }
+    h3 { 
+        font-size: 1.5em; 
+        line-height: 1; 
+        margin-bottom: 1em; }
+    h4 { 
+        font-size: 1.2em; 
+        line-height: 1.25; 
+        margin-bottom: 1.25em; }
+    h5 { 
+        font-size: 1em; 
+        margin-bottom: 1.5em; }
+    h6 { font-size: 1em; }
+
+
+/**
+ * Optimize Legibility
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         chrome, firefox, opera, safari
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    body,
+    h1,h2,h3,h4,h5,h6,
+    p,
+    ul,ol,dl,
+    input,textarea { text-rendering: optimizeLegibility !important; }
+
+
+/**
+ * Text Elements
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    p { margin: 0 0 1.5em; }
+    
+    ul, ol { margin: 0 1.5em 1.5em 1.5em; }
+    ul { list-style-type: circle; }
+    ol { list-style-type: decimal; }
+    
+    dl { margin: 0 0 1.5em 0; }
+    dl dt { font-weight: bold; }
+    dl dd { margin-left: 1.5em; }
+    
+    abbr, acronym { border-bottom: 1px dotted #000; }
+    address { 
+        margin-top: 1.5em; 
+        font-style: italic; }
+    del { color: #000; }
+    
+    blockquote { margin: 1.5em; }
+    b, strong { font-weight: bold; }
+    i, em, dfn { font-style: italic; }
+    dfn { font-weight: bold; }
+    pre, code { 
+        margin: 1.5em 0; 
+        white-space: pre; }
+    pre, code, tt { 
+        font: 1em monospace; 
+        line-height: 1.5; } 
+    tt { 
+        display: block; 
+        margin: 1.5em 0; 
+        line-height: 1.5; }
+    span.amp {
+      font-family: Baskerville, Palatino, "Book Antiqua", serif;
+      font-style: italic; }
+
+/* End of typesetting.css */

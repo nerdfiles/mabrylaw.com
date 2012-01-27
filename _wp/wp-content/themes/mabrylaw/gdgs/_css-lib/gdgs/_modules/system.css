@@ -1,0 +1,400 @@
+@charset "utf-8";
+
+/**
+ * GDGS System
+ * 
+ * The grid system (and not the "framework"). 
+ * By "extension" I mean reaching GDGS into standard elements. 
+ * Bounds is "support" for GDGS itself, grid elements.
+ *
+ * @cssdoc          version 1.0-pre
+ * 
+ * @site            Getting Dress'd Grid System
+ * @link            http://nerdfiles.net/gdgs/
+ * @author          nerdfiles
+ * @copyright       Copyright (c) 2010, 2010-2011 by nerdfiles (Aaron Alexander)
+ * @license         Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+ *
+ * @project         gdgs
+ * @version         0.0.1
+ * @package         gdgs-core
+ * @subpackage      gdgs-modules
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+
+/**
+ * Column guides
+ *
+ * Column guides
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .show-guide-16 { 
+        background: url(_img-ui/16-column-guide.gif) center 0 repeat-y; }
+
+
+/**
+ * Column context
+ *
+ * Column context
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    body { min-width: 960px; }
+    
+    .column-layout { 
+        width: 960px; 
+        margin-left: auto; 
+        margin-right: auto; }
+
+
+/**
+ * Columns
+ *
+ * Columns
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .column-layout .columns-1,
+    .column-layout .columns-2,
+    .column-layout .columns-3,
+    .column-layout .columns-4,
+    .column-layout .columns-5,
+    .column-layout .columns-6,
+    .column-layout .columns-7,
+    .column-layout .columns-8,
+    .column-layout .columns-9,
+    .column-layout .columns-10,
+    .column-layout .columns-11,
+    .column-layout .columns-12,
+    .column-layout .columns-13,
+    .column-layout .columns-14,
+    .column-layout .columns-15,
+    .column-layout .columns-16 { 
+        display: inline; 
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px; }
+
+
+/**
+ * Column widths
+ *
+ * Column widths
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .column-layout .columns-1 { width: 40px; }
+    .column-layout .columns-2 { width: 100px; }
+    .column-layout .columns-3 { width: 160px; }
+    .column-layout .columns-4 { width: 220px; }
+    .column-layout .columns-5 { width: 280px; }
+    .column-layout .columns-6 { width: 340px; }
+    .column-layout .columns-7 { width: 400px; }
+    .column-layout .columns-8 { width: 460px; }
+    .column-layout .columns-9 { width: 520px; }
+    .column-layout .columns-10 { width: 580px; }
+    .column-layout .columns-11 { width: 640px; }
+    .column-layout .columns-12 { width: 700px; }
+    .column-layout .columns-13 { width: 760px; }
+    .column-layout .columns-14 { width: 820px; }
+    .column-layout .columns-15 { width: 880px; }
+    .column-layout .columns-16 { width: 940px; }
+
+
+/**
+ * Horizontal Controls (Macro-Level)
+ *
+ * Your guess is not as good as mine!
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            ...
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    /**
+     * Haul and Propel 
+     */
+    
+    .haul-1, .propel-1,
+    .haul-2, .propel-2
+    .haul-3, .propel-3,
+    .haul-4, .propel-4,
+    .haul-5, .propel-5,
+    .haul-6, .propel-6,
+    .haul-7, .propel-7,
+    .haul-8, .propel-8,
+    .haul-9, .propel-9,
+    .haul-10, .propel-10,
+    .haul-11, .propel-11,
+    .haul-12, .propel-12,
+    .haul-13, .propel-13,
+    .haul-14, .propel-14,
+    .haul-15, .propel-15 { position: relative; }
+    
+    /**
+     * Column - Haul (Above Flow) 
+     */
+    
+    .haul-1 { left: -60px; }
+    .haul-2 { left: -120px; }
+    .haul-3 { left: -180px; }
+    .haul-4 { left: -240px; }
+    .haul-5 { left: -300px; }
+    .haul-6 { left: -360px; }
+    .haul-7 { left: -420px; }
+    .haul-8 { left: -480px; }
+    .haul-9 { left: -540px; }
+    .haul-10 { left: -600px; }
+    .haul-11 { left: -660px; }
+    .haul-12 { left: -720px; }
+    .haul-13 { left: -780px; }
+    .haul-14 { left: -840px; }
+    .haul-15 { left: -900px; }
+    
+    /**
+     * Column - Propel (Above Flow) 
+     */
+    
+    .propel-1 { left: 60px; }
+    .propel-2 { left: 120px; }
+    .propel-3 { left: 180px; }
+    .propel-4 { left: 240px; }
+    .propel-5 { left: 300px; }
+    .propel-6 { left: 360px; }
+    .propel-7 { left: 420px; }
+    .propel-8 { left: 480px; }
+    .propel-9 { left: 540px; }
+    .propel-10 { left: 600px; }
+    .propel-11 { left: 660px; }
+    .propel-12 { left: 720px; }
+    .propel-13 { left: 780px; }
+    .propel-14 { left: 840px; }
+    .propel-15 { left: 900px; }
+
+    /**
+     * Column - Prepend (In Flow) 
+     */
+
+    .prepend-1 { padding-left: 60px; }
+    .prepend-2 { padding-left: 120px; }
+    .prepend-3 { padding-left: 180px; }
+    .prepend-4 { padding-left: 240px; }
+    .prepend-5 { padding-left: 300px; }
+    .prepend-6 { padding-left: 360px; }
+    .prepend-7 { padding-left: 420px; }
+    .prepend-8 { padding-left: 480px; }
+    .prepend-9 { padding-left: 540px; }
+    .prepend-10 { padding-left: 600px; }
+    .prepend-11 { padding-left: 660px; }
+    .prepend-12 { padding-left: 720px; }
+    .prepend-13 { padding-left: 780px; }
+    .prepend-14 { padding-left: 840px; }
+    .prepend-15 { padding-left: 900px; }
+
+    /**
+     * Column - Append (In Flow) 
+     */
+
+    .append-1 { padding-right: 60px; }
+    .append-2 { padding-right: 120px; }
+    .append-3 { padding-right: 180px; }
+    .append-4 { padding-right: 240px; }
+    .append-5 { padding-right: 300px; }
+    .append-6 { padding-right: 360px; }
+    .append-7 { padding-right: 420px; }
+    .append-8 { padding-right: 480px; }
+    .append-9 { padding-right: 540px; }
+    .append-10 { padding-right: 600px; }
+    .append-11 { padding-right: 660px; }
+    .append-12 { padding-right: 720px; }
+    .append-13 { padding-right: 780px; }
+    .append-14 { padding-right: 840px; }
+    .append-15 { padding-right: 900px; }
+    
+    /** 
+     * Column - Push - Pushing a Sibling (In Flow) 
+     */
+
+    .push-1 { margin-right: 90px; }
+    .push-2 { margin-right: 170px; }
+    .push-3 { margin-right: 250px; }
+    .push-4 { margin-right: 330px; }
+    .push-5 { margin-right: 410px; }
+    .push-6 { margin-right: 490px; }
+    .push-7 { margin-right: 570px; }
+    .push-8 { margin-right: 650px; }
+    .push-9 { margin-right: 730px; }
+    .push-10 { margin-right: 810px; }
+    
+    /**
+     * Column - Pull - Pulling a Sibling (In Flow) 
+     */
+
+    .pull-1 { margin-right: -90px; }
+    .pull-2 { margin-right: -170px; }
+    .pull-3 { margin-right: -250px; }
+    .pull-4 { margin-right: -330px; }
+    .pull-5 { margin-right: -410px; }
+    .pull-6 { margin-right: -490px; }
+    .pull-7 { margin-right: -570px; }
+    .pull-8 { margin-right: -650px; }
+    .pull-9 { margin-right: -730px; }
+    .pull-10 { margin-right: -810px; }
+    
+    /**
+     * Column - Jump - Jumping an Element (In Flow) 
+     */
+    
+    .jump-1 { margin-left: 90px; }
+    .jump-2 { margin-left: 170px; }
+    .jump-3 { margin-left: 250px; }
+    .jump-4 { margin-left: 330px; }
+    .jump-5 { margin-left: 410px; }
+    .jump-6 { margin-left: 490px; }
+    .jump-7 { margin-left: 570px; }
+    .jump-8 { margin-left: 650px; }
+    .jump-9 { margin-left: 730px; }
+    .jump-10 { margin-left: 810px; }
+    
+    /**
+     * Column - Withdraw - Withdrawing an Element (In Flow) 
+     */
+    
+    .withdraw-1 { margin-left: -90px; }
+    .withdraw-2 { margin-left: -170px; }
+    .withdraw-3 { margin-left: -250px; }
+    .withdraw-4 { margin-left: -330px; }
+    .withdraw-5 { margin-left: -410px; }
+    .withdraw-6 { margin-left: -490px; }
+    .withdraw-7 { margin-left: -570px; }
+    .withdraw-8 { margin-left: -650px; }
+    .withdraw-9 { margin-left: -730px; }
+    .withdraw-10 { margin-left: -810px; }
+
+
+/**
+ * Beginning/Ending Columns
+ *
+ * ...
+ * 
+ * @section:        modules
+ * @subsection      utility
+ *
+ * @version         0.0.1
+ * @since           0.0.1
+ * @date            2011-03-09 03:06
+ * @lastmodified    2011-03-09 03:06
+ *
+ * @todo            None.
+ *
+ * @css-for         all
+ * @media           all
+ * @affected        all
+ * @bugfix
+ * @workaround
+ * @tested          all
+ * @valid           true
+ */
+
+    .column-layout .begin { 
+        margin-left: 0 !important; }
+    .column-layout .end { 
+        margin-right: 0 !important; }
+
+/* End of _modules/system.css */
