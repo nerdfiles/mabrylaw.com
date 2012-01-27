@@ -34,6 +34,8 @@
         </div>
     
     	<div id="admin-footer" class="columns-8 end">
+        <!-- here I have invent'd a candidate category for the web -->
+        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
     		<ul>
     		    <li><a href="/_wp/wp-admin/">dashboard</a></li>
     		    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>

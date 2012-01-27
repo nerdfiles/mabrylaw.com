@@ -1,4 +1,5 @@
 mabrylaw.com
 ===
 
-Some Icons are Copyright © Yusuke Kamiyamane. All rights reserved. Licensed under a Creative Commons Attribution 3.0 license.
+Some Icons are Copyright © Yusuke Kamiyamane. 
+Licensed under a Creative Commons Attribution 3.0 license.
