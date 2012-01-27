@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<div id="post-0" class="post error404 not-found">
 				<div class="entry-content">
-					<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'twentyten' ); ?></p>
+					<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'mabrylaw' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			</div><!-- #post-0 -->

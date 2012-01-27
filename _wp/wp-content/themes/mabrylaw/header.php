@@ -48,7 +48,7 @@ if ( $site_description && ( is_home() || is_front_page() ) )
 
 // Add a page number if necessary:
 if ( $paged >= 2 || $page >= 2 )
-	echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+	echo ' | ' . sprintf( __( 'Page %s', 'mabrylaw' ), max( $paged, $page ) );
 
 ?></title>
 
@@ -96,32 +96,32 @@ if ( $paged >= 2 || $page >= 2 )
                     <a 
                         href="#language-switcher" 
                         id="skip-language-switcher"
-                        title="<?php esc_attr_e( 'Change language', 'twentyten' ); ?>">
-                        <?php _e( 'Change language', 'twentyten' ); ?>
+                        title="<?php esc_attr_e( 'Change language', 'mabrylaw' ); ?>">
+                        <?php _e( 'Change language', 'mabrylaw' ); ?>
                     </a>
                 </li>
                 <li>
                     <a 
                         href="#main" 
                         id="skip-main"
-                        title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>">
-                        <?php _e( 'Skip to content', 'twentyten' ); ?>
+                        title="<?php esc_attr_e( 'Skip to content', 'mabrylaw' ); ?>">
+                        <?php _e( 'Skip to content', 'mabrylaw' ); ?>
                     </a>
                 </li>
                 <li>
                     <a 
                         href="#search"
                         id="skip-search" 
-                        title="<?php esc_attr_e( 'Skip to search', 'twentyten' ); ?>">
-                        <?php _e( 'Skip to search', 'twentyten' ); ?>
+                        title="<?php esc_attr_e( 'Skip to search', 'mabrylaw' ); ?>">
+                        <?php _e( 'Skip to search', 'mabrylaw' ); ?>
                     </a>
                 </li>
                 <li>
                     <a 
                         href="#primary" 
                         id="skip-primary"
-                        title="<?php esc_attr_e( 'Skip to primary sidebar', 'twentyten' ); ?>">
-                        <?php _e( 'Skip to primary sidebar', 'twentyten' ); ?>
+                        title="<?php esc_attr_e( 'Skip to primary sidebar', 'mabrylaw' ); ?>">
+                        <?php _e( 'Skip to primary sidebar', 'mabrylaw' ); ?>
                     </a>
                 </li>
             </ul>
@@ -174,9 +174,13 @@ if ( $paged >= 2 || $page >= 2 )
         
 	</div>
 	
-	<div id="nav" class="columns-8">
-        <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-        <?php wp_nav_menu( array( 'container_class' => 'menu-header clearfix', 'theme_location' => 'primary' ) ); ?>
+    <div id="nav" class="columns-8">
+      <?php 
+        wp_nav_menu( array( 
+          'container_class' => 'menu-header clearfix', 
+          'theme_location' => 'primary' 
+        ) ); 
+      ?>
     </div>
     
     <?php if (is_front_page()) : ?>
@@ -197,7 +201,7 @@ if ( $paged >= 2 || $page >= 2 )
                     if ( get_header_image() ) : ?>
                     
                         <li class="carousel-item carousel-item-<?php echo $carousel_counter; ?> <?php if ($carousel_counter == $carousel_total) { echo "carousel-item-last"; } ?> clearfix">
-                            <div class="carousel-item-container" style="background: url('<?php header_image(); ?>') 100% 50% no-repeat; ">
+                            <div class="carousel-item-container" style="background: url('http://placehold.it/350x150') 100% 50% no-repeat; ">
                                 <div class="carousel-item-content">
                                     <!--
                                         div class="carousel-item-category-container"><a class="carousel-item-category-link" href="<?php echo $cat[0]->slug; ?>/" title="View articles listed under <?php echo $cat[0]->cat_name; ?>"><?php echo strtolower($cat[0]->cat_name); ?></a></div

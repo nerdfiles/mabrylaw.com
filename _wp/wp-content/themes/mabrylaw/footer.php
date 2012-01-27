@@ -22,7 +22,7 @@
 ?>
 		    
         <div id="footer-logo" class="columns-16 begin end">
-            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="http://mabrylaw.com/_wp/wp-content/themes/twentyten/_img-ui/mabry-logo.png" width="300" /></a>
+            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="http://mabrylaw.com/_wp/wp-content/themes/mabrylaw/_img-ui/mabry-logo.png" width="300" /></a>
         </div>
         
         <div id="colophon" class="columns-8 begin">
