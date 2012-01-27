@@ -201,7 +201,7 @@ if ( $paged >= 2 || $page >= 2 )
                     if ( get_header_image() ) : ?>
                     
                         <li class="carousel-item carousel-item-<?php echo $carousel_counter; ?> <?php if ($carousel_counter == $carousel_total) { echo "carousel-item-last"; } ?> clearfix">
-                            <div class="carousel-item-container" style="background: url('http://placehold.it/350x150') 100% 50% no-repeat; ">
+                            <div class="carousel-item-container" style="background: url('http://placehold.it/960x250') 100% 50% no-repeat; ">
                                 <div class="carousel-item-content">
                                     <!--
                                         div class="carousel-item-category-container"><a class="carousel-item-category-link" href="<?php echo $cat[0]->slug; ?>/" title="View articles listed under <?php echo $cat[0]->cat_name; ?>"><?php echo strtolower($cat[0]->cat_name); ?></a></div
