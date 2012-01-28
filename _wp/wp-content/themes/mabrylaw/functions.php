@@ -45,14 +45,14 @@ $theme = new Hybrid();
 /**
  * Fictional function to register sidebars.
  */
-function super_mario_register_sidebars() {
+function mabrylaw_register_sidebars() {
     return false;
 }
 
 /**
  * Fictional function to disable sidebars.
  */
-function super_mario_disable_sidebars( $sidebars_widgets ) {
+function mabrylaw_disable_sidebars( $sidebars_widgets ) {
     return $sidebars_widgets;
 }
  
@@ -165,7 +165,8 @@ function mabrylaw_setup() {
     add_theme_support( 'hybrid-core-post-meta-box' );
     //add_theme_support( 'hybrid-core-drop-downs' );
     add_theme_support( 'hybrid-core-seo' );
-    add_theme_support( 'hybrid-core-template-hierarchy' );
+    //add_theme_support( 'hybrid-core-template-hierarchy' );
+    // @wtf
 
     /* Add theme support for framework extensions. */
     add_theme_support( 'post-layouts' );
@@ -181,10 +182,10 @@ function mabrylaw_setup() {
     add_custom_background();
 
     /* Register sidebars. */
-    add_action( 'widgets_init', 'super_mario_register_sidebars', 11 );
+    add_action( 'widgets_init', 'mabrylaw_register_sidebars', 11 );
 
     /* Filter the sidebar widgets. */
-    add_filter( 'sidebars_widgets', 'super_mario_disable_sidebars' );
+    add_filter( 'sidebars_widgets', 'mabrylaw_disable_sidebars' );
     
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -726,11 +727,11 @@ add_action('custom_entry_title', 'custom_entry_title');
 
 function custom_entry_title() {
     
-    if (!is_page() || is_front_page() || is_home()):
+    if (!is_page() && !is_front_page()):
     ?>
     
     <div class="entry-meta">
-    <?php mabrylaw_posted_on(); ?>
+    <?php //mabrylaw_posted_on(); ?>
     </div><!-- .entry-meta -->
     
     <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'mabrylaw' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -748,7 +749,7 @@ function custom_page_header() {
     
     if ( $post_type == 'page' ) {
         $titleText = $titleText;
-        $titleUrl = '.';
+        $titleUrl = get_permalink();
     } else if ( $post_type == 'people' ) {
         $titleText = "people";
         $titleUrl = $url . "/people/";

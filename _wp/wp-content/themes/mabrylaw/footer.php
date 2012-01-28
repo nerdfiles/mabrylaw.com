@@ -22,10 +22,13 @@
 ?>
 		    
         <div id="footer-logo" class="columns-16 begin end">
-            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="http://mabrylaw.com/_wp/wp-content/themes/mabrylaw/_img-ui/mabry-logo.png" width="300" /></a>
+            
         </div>
         
-        <div id="colophon" class="columns-8 begin">
+        <div id="persistent-contact" class="columns-8 begin">
+            <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+              <img src="http://mabrylaw.com/_wp/wp-content/themes/mabrylaw/_img-ui/mabry-logo.png" width="300" title="Mabry Law Firm / PLLC" />
+            </a>
             <div>711 West Alabama Street</div>
             <div>Houston, Texas 77006-5005</div>
             <div><strong>T</strong> 832.350.8335</div>
@@ -34,8 +37,16 @@
         </div>
     
     	<div id="admin-footer" class="columns-8 end">
-        <!-- here I have invent'd a candidate category for the web -->
-        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <div class="recent-news">
+          <h4>Recent News</h4>
+          <div class="content">
+            <h5>
+              <a target="_blank" href="http://lawyersusaonline.com/benchmarks/2012/01/24/paralegals-get-green-light-for-flsa-class-action/">Paralegals get green light for FLSA class action</a>
+            </h5>
+            <div class="date">01.24.2012</div>
+            <div class="more"><a target="_blank" href="http://lawyersusaonline.com/benchmarks/2012/01/24/paralegals-get-green-light-for-flsa-class-action/">Read more</a></div>
+          </div>
+        </div>
     		<ul>
     		    <li><a href="/_wp/wp-admin/">dashboard</a></li>
     		    <li><a href="http://validator.w3.org/check?verbose=1&amp;uri=<?php echo curPageURL(); ?>">html</a></li>

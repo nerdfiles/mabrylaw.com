@@ -183,7 +183,7 @@ if ( $paged >= 2 || $page >= 2 )
       ?>
     </div>
     
-    <?php if (is_front_page()) : ?>
+    <?php if (is_page('Home')) : ?>
     
     <div id="masthead" class="columns-16 attic-4">
         <div id="carousel">

@@ -24,7 +24,7 @@ get_header(); ?>
 			 */
 			 get_template_part( 'loop', 'index' );
 			?>
-
+<p>awkdjawl</p>
 			</div><!-- #content -->
 		</div><!-- #container -->
 

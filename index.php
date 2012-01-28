@@ -11,11 +11,13 @@
  *
  * @var bool
  */
-//define('WP_USE_THEMES', true);
+define('WP_USE_THEMES', true);
 
 /** Loads the WordPress Environment and Template */
-//require('./wp-blog-header.php');
+require('./wp-blog-header.php');
 ?>
+<?php
+$nada = '''
 <!DOCTYPE HTML>
 
 <!--
@@ -30,7 +32,7 @@
  */
  
 -->
-
+<!--
 <html lang="en" class="mabrylaw-com under-construction">
 <head>
 <meta charset="utf-8" />
@@ -84,3 +86,6 @@ a:active { }
 
 </body>
 </html>
+-->
+'''
+?>

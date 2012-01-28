@@ -27,7 +27,7 @@
                     <?php do_action('custom_entry_title'); ?>
 
 					<div class="entry-meta">
-						<?php mabrylaw_posted_on(); ?>
+						<?php //mabrylaw_posted_on(); ?>
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">

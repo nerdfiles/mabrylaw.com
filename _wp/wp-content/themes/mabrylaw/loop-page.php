@@ -19,8 +19,8 @@
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     
-                    <!-- loop-page.php > do_action('custom_entry_title'); -->
-                    <?php do_action('custom_entry_title'); ?>
+          <!-- loop-page.php > do_action('custom_entry_title'); -->
+          <?php do_action('custom_entry_title'); ?>
 					
 					<div class="entry-content">
 						<?php the_content(); ?>

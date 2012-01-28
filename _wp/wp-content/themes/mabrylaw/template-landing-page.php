@@ -16,7 +16,7 @@ get_header(); ?>
 
 <?php get_template_part( 'rail', 'left' ); ?>
         
-		<div id="container" class="columns-9">
+		<div id="container" class="columns-11 begin">
 			<div id="content" role="main">
 
 			<?php
